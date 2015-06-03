@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		961239B71B1F37FF00041868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239B61B1F37FF00041868 /* main.m */; };
+		961239BA1B1F37FF00041868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239B91B1F37FF00041868 /* AppDelegate.m */; };
+		961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */; };
+		961239C01B1F37FF00041868 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239BF1B1F37FF00041868 /* ViewController.m */; };
+		961239C31B1F37FF00041868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961239C11B1F37FF00041868 /* Main.storyboard */; };
+		961239C51B1F37FF00041868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961239C41B1F37FF00041868 /* Images.xcassets */; };
+		961239C81B1F37FF00041868 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961239C61B1F37FF00041868 /* LaunchScreen.xib */; };
+		961239D41B1F37FF00041868 /* SoulJaWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		961239CE1B1F37FF00041868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 961239A91B1F37FF00041868 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 961239B01B1F37FF00041868;
+			remoteInfo = SoulJaWeibo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		961239B11B1F37FF00041868 /* SoulJaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulJaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		961239B51B1F37FF00041868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		961239B61B1F37FF00041868 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		961239B81B1F37FF00041868 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		961239B91B1F37FF00041868 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		961239BC1B1F37FF00041868 /* SoulJaWeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoulJaWeibo.xcdatamodel; sourceTree = "<group>"; };
+		961239BE1B1F37FF00041868 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		961239BF1B1F37FF00041868 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		961239C21B1F37FF00041868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		961239C41B1F37FF00041868 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		961239C71B1F37FF00041868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		961239CD1B1F37FF00041868 /* SoulJaWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulJaWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		961239D21B1F37FF00041868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoulJaWeiboTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		961239AE1B1F37FF00041868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		961239CA1B1F37FF00041868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		961239A81B1F37FE00041868 = {
+			isa = PBXGroup;
+			children = (
+				961239B31B1F37FF00041868 /* SoulJaWeibo */,
+				961239D01B1F37FF00041868 /* SoulJaWeiboTests */,
+				961239B21B1F37FF00041868 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		961239B21B1F37FF00041868 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				961239B11B1F37FF00041868 /* SoulJaWeibo.app */,
+				961239CD1B1F37FF00041868 /* SoulJaWeiboTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		961239B31B1F37FF00041868 /* SoulJaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				961239B81B1F37FF00041868 /* AppDelegate.h */,
+				961239B91B1F37FF00041868 /* AppDelegate.m */,
+				961239BE1B1F37FF00041868 /* ViewController.h */,
+				961239BF1B1F37FF00041868 /* ViewController.m */,
+				961239C11B1F37FF00041868 /* Main.storyboard */,
+				961239C41B1F37FF00041868 /* Images.xcassets */,
+				961239C61B1F37FF00041868 /* LaunchScreen.xib */,
+				961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */,
+				961239B41B1F37FF00041868 /* Supporting Files */,
+			);
+			path = SoulJaWeibo;
+			sourceTree = "<group>";
+		};
+		961239B41B1F37FF00041868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				961239B51B1F37FF00041868 /* Info.plist */,
+				961239B61B1F37FF00041868 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		961239D01B1F37FF00041868 /* SoulJaWeiboTests */ = {
+			isa = PBXGroup;
+			children = (
+				961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */,
+				961239D11B1F37FF00041868 /* Supporting Files */,
+			);
+			path = SoulJaWeiboTests;
+			sourceTree = "<group>";
+		};
+		961239D11B1F37FF00041868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				961239D21B1F37FF00041868 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		961239B01B1F37FF00041868 /* SoulJaWeibo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 961239D71B1F37FF00041868 /* Build configuration list for PBXNativeTarget "SoulJaWeibo" */;
+			buildPhases = (
+				961239AD1B1F37FF00041868 /* Sources */,
+				961239AE1B1F37FF00041868 /* Frameworks */,
+				961239AF1B1F37FF00041868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoulJaWeibo;
+			productName = SoulJaWeibo;
+			productReference = 961239B11B1F37FF00041868 /* SoulJaWeibo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		961239CC1B1F37FF00041868 /* SoulJaWeiboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 961239DA1B1F37FF00041868 /* Build configuration list for PBXNativeTarget "SoulJaWeiboTests" */;
+			buildPhases = (
+				961239C91B1F37FF00041868 /* Sources */,
+				961239CA1B1F37FF00041868 /* Frameworks */,
+				961239CB1B1F37FF00041868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				961239CF1B1F37FF00041868 /* PBXTargetDependency */,
+			);
+			name = SoulJaWeiboTests;
+			productName = SoulJaWeiboTests;
+			productReference = 961239CD1B1F37FF00041868 /* SoulJaWeiboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		961239A91B1F37FF00041868 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = SoulJa;
+				TargetAttributes = {
+					961239B01B1F37FF00041868 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					961239CC1B1F37FF00041868 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 961239B01B1F37FF00041868;
+					};
+				};
+			};
+			buildConfigurationList = 961239AC1B1F37FF00041868 /* Build configuration list for PBXProject "SoulJaWeibo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 961239A81B1F37FE00041868;
+			productRefGroup = 961239B21B1F37FF00041868 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				961239B01B1F37FF00041868 /* SoulJaWeibo */,
+				961239CC1B1F37FF00041868 /* SoulJaWeiboTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		961239AF1B1F37FF00041868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				961239C31B1F37FF00041868 /* Main.storyboard in Resources */,
+				961239C81B1F37FF00041868 /* LaunchScreen.xib in Resources */,
+				961239C51B1F37FF00041868 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		961239CB1B1F37FF00041868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		961239AD1B1F37FF00041868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				961239BA1B1F37FF00041868 /* AppDelegate.m in Sources */,
+				961239B71B1F37FF00041868 /* main.m in Sources */,
+				961239C01B1F37FF00041868 /* ViewController.m in Sources */,
+				961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		961239C91B1F37FF00041868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				961239D41B1F37FF00041868 /* SoulJaWeiboTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		961239CF1B1F37FF00041868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 961239B01B1F37FF00041868 /* SoulJaWeibo */;
+			targetProxy = 961239CE1B1F37FF00041868 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		961239C11B1F37FF00041868 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				961239C21B1F37FF00041868 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		961239C61B1F37FF00041868 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				961239C71B1F37FF00041868 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		961239D51B1F37FF00041868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		961239D61B1F37FF00041868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		961239D81B1F37FF00041868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoulJaWeibo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		961239D91B1F37FF00041868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoulJaWeibo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		961239DB1B1F37FF00041868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SoulJaWeiboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulJaWeibo.app/SoulJaWeibo";
+			};
+			name = Debug;
+		};
+		961239DC1B1F37FF00041868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SoulJaWeiboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulJaWeibo.app/SoulJaWeibo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		961239AC1B1F37FF00041868 /* Build configuration list for PBXProject "SoulJaWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				961239D51B1F37FF00041868 /* Debug */,
+				961239D61B1F37FF00041868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		961239D71B1F37FF00041868 /* Build configuration list for PBXNativeTarget "SoulJaWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				961239D81B1F37FF00041868 /* Debug */,
+				961239D91B1F37FF00041868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		961239DA1B1F37FF00041868 /* Build configuration list for PBXNativeTarget "SoulJaWeiboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				961239DB1B1F37FF00041868 /* Debug */,
+				961239DC1B1F37FF00041868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				961239BC1B1F37FF00041868 /* SoulJaWeibo.xcdatamodel */,
+			);
+			currentVersion = 961239BC1B1F37FF00041868 /* SoulJaWeibo.xcdatamodel */;
+			path = SoulJaWeibo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 961239A91B1F37FF00041868 /* Project object */;
+}
