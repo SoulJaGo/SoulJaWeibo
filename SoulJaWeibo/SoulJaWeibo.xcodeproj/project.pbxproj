@@ -10,11 +10,15 @@
 		961239B71B1F37FF00041868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239B61B1F37FF00041868 /* main.m */; };
 		961239BA1B1F37FF00041868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239B91B1F37FF00041868 /* AppDelegate.m */; };
 		961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */; };
-		961239C01B1F37FF00041868 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239BF1B1F37FF00041868 /* ViewController.m */; };
 		961239C31B1F37FF00041868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961239C11B1F37FF00041868 /* Main.storyboard */; };
 		961239C51B1F37FF00041868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961239C41B1F37FF00041868 /* Images.xcassets */; };
 		961239C81B1F37FF00041868 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961239C61B1F37FF00041868 /* LaunchScreen.xib */; };
 		961239D41B1F37FF00041868 /* SoulJaWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */; };
+		961276161B21EE34006343C0 /* SJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961276151B21EE34006343C0 /* SJTabBarController.m */; };
+		961276191B21EE83006343C0 /* SJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961276181B21EE83006343C0 /* SJHomeViewController.m */; };
+		9612761C1B21EE9A006343C0 /* SJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612761B1B21EE9A006343C0 /* SJMessageViewController.m */; };
+		9612761F1B21EEB3006343C0 /* SJDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612761E1B21EEB3006343C0 /* SJDiscoverViewController.m */; };
+		961276221B21EEDA006343C0 /* SJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961276211B21EEDA006343C0 /* SJMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +38,22 @@
 		961239B81B1F37FF00041868 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		961239B91B1F37FF00041868 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		961239BC1B1F37FF00041868 /* SoulJaWeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoulJaWeibo.xcdatamodel; sourceTree = "<group>"; };
-		961239BE1B1F37FF00041868 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		961239BF1B1F37FF00041868 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		961239C21B1F37FF00041868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		961239C41B1F37FF00041868 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		961239C71B1F37FF00041868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		961239CD1B1F37FF00041868 /* SoulJaWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulJaWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		961239D21B1F37FF00041868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoulJaWeiboTests.m; sourceTree = "<group>"; };
+		961276141B21EE34006343C0 /* SJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTabBarController.h; sourceTree = "<group>"; };
+		961276151B21EE34006343C0 /* SJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTabBarController.m; sourceTree = "<group>"; };
+		961276171B21EE83006343C0 /* SJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJHomeViewController.h; sourceTree = "<group>"; };
+		961276181B21EE83006343C0 /* SJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJHomeViewController.m; sourceTree = "<group>"; };
+		9612761A1B21EE9A006343C0 /* SJMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMessageViewController.h; sourceTree = "<group>"; };
+		9612761B1B21EE9A006343C0 /* SJMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJMessageViewController.m; sourceTree = "<group>"; };
+		9612761D1B21EEB3006343C0 /* SJDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDiscoverViewController.h; sourceTree = "<group>"; };
+		9612761E1B21EEB3006343C0 /* SJDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDiscoverViewController.m; sourceTree = "<group>"; };
+		961276201B21EEDA006343C0 /* SJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMeViewController.h; sourceTree = "<group>"; };
+		961276211B21EEDA006343C0 /* SJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,15 +95,20 @@
 		961239B31B1F37FF00041868 /* SoulJaWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				961276131B219BFC006343C0 /* Classes */,
 				961239B81B1F37FF00041868 /* AppDelegate.h */,
 				961239B91B1F37FF00041868 /* AppDelegate.m */,
-				961239BE1B1F37FF00041868 /* ViewController.h */,
-				961239BF1B1F37FF00041868 /* ViewController.m */,
-				961239C11B1F37FF00041868 /* Main.storyboard */,
-				961239C41B1F37FF00041868 /* Images.xcassets */,
-				961239C61B1F37FF00041868 /* LaunchScreen.xib */,
-				961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */,
 				961239B41B1F37FF00041868 /* Supporting Files */,
+				961276141B21EE34006343C0 /* SJTabBarController.h */,
+				961276151B21EE34006343C0 /* SJTabBarController.m */,
+				961276171B21EE83006343C0 /* SJHomeViewController.h */,
+				961276181B21EE83006343C0 /* SJHomeViewController.m */,
+				9612761A1B21EE9A006343C0 /* SJMessageViewController.h */,
+				9612761B1B21EE9A006343C0 /* SJMessageViewController.m */,
+				9612761D1B21EEB3006343C0 /* SJDiscoverViewController.h */,
+				9612761E1B21EEB3006343C0 /* SJDiscoverViewController.m */,
+				961276201B21EEDA006343C0 /* SJMeViewController.h */,
+				961276211B21EEDA006343C0 /* SJMeViewController.m */,
 			);
 			path = SoulJaWeibo;
 			sourceTree = "<group>";
@@ -99,6 +116,10 @@
 		961239B41B1F37FF00041868 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				961239C11B1F37FF00041868 /* Main.storyboard */,
+				961239C41B1F37FF00041868 /* Images.xcassets */,
+				961239C61B1F37FF00041868 /* LaunchScreen.xib */,
+				961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */,
 				961239B51B1F37FF00041868 /* Info.plist */,
 				961239B61B1F37FF00041868 /* main.m */,
 			);
@@ -120,6 +141,13 @@
 				961239D21B1F37FF00041868 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		961276131B219BFC006343C0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961276161B21EE34006343C0 /* SJTabBarController.m in Sources */,
+				9612761F1B21EEB3006343C0 /* SJDiscoverViewController.m in Sources */,
+				961276191B21EE83006343C0 /* SJHomeViewController.m in Sources */,
 				961239BA1B1F37FF00041868 /* AppDelegate.m in Sources */,
 				961239B71B1F37FF00041868 /* main.m in Sources */,
-				961239C01B1F37FF00041868 /* ViewController.m in Sources */,
+				961276221B21EEDA006343C0 /* SJMeViewController.m in Sources */,
 				961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */,
+				9612761C1B21EE9A006343C0 /* SJMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

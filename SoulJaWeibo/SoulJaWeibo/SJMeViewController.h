@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  SJMeViewController.h
 //  SoulJaWeibo
 //
-//  Created by SoulJa on 15/6/3.
+//  Created by SoulJa on 15/6/5.
 //  Copyright (c) 2015年 SoulJa. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SJMeViewController : UITableViewController
 
 @end
-

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SJTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOption
 {
-    //self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    //[self.window makeKeyAndVisible];
+    //初始化Window
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //设置statusbar出现
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    //设置Window的根控制器
+    self.window.rootViewController = [[SJTabBarController alloc] init];
+    //Window显示
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
