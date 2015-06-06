@@ -12,7 +12,9 @@
 		961239C51B1F37FF00041868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961239C41B1F37FF00041868 /* Images.xcassets */; };
 		961239C81B1F37FF00041868 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961239C61B1F37FF00041868 /* LaunchScreen.xib */; };
 		961239D41B1F37FF00041868 /* SoulJaWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */; };
+		96294D821B22A23D0040FAFD /* SJTabbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96294D811B22A23D0040FAFD /* SJTabbarButton.m */; };
 		965CFE271B227F7D003D83F2 /* UIImage+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 965CFE261B227F7D003D83F2 /* UIImage+SJ.m */; };
+		965CFE2A1B228DEA003D83F2 /* SJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 965CFE291B228DEA003D83F2 /* SJTabBar.m */; };
 		96BD21301B2278BB007DF25A /* SJDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD21101B2278BB007DF25A /* SJDiscoverViewController.m */; };
 		96BD21311B2278BB007DF25A /* SJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD21161B2278BB007DF25A /* SJHomeViewController.m */; };
 		96BD21321B2278BB007DF25A /* SJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD211C1B2278BB007DF25A /* SJTabBarController.m */; };
@@ -42,9 +44,13 @@
 		961239CD1B1F37FF00041868 /* SoulJaWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulJaWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		961239D21B1F37FF00041868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		961239D31B1F37FF00041868 /* SoulJaWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoulJaWeiboTests.m; sourceTree = "<group>"; };
+		96294D801B22A23D0040FAFD /* SJTabbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTabbarButton.h; sourceTree = "<group>"; };
+		96294D811B22A23D0040FAFD /* SJTabbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTabbarButton.m; sourceTree = "<group>"; };
 		965CFE231B227BEA003D83F2 /* SoulJaWeibo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoulJaWeibo.pch; path = ../../SoulJaWeibo.pch; sourceTree = "<group>"; };
 		965CFE251B227F7D003D83F2 /* UIImage+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SJ.h"; sourceTree = "<group>"; };
 		965CFE261B227F7D003D83F2 /* UIImage+SJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SJ.m"; sourceTree = "<group>"; };
+		965CFE281B228DEA003D83F2 /* SJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTabBar.h; sourceTree = "<group>"; };
+		965CFE291B228DEA003D83F2 /* SJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTabBar.m; sourceTree = "<group>"; };
 		96BD210F1B2278BB007DF25A /* SJDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDiscoverViewController.h; sourceTree = "<group>"; };
 		96BD21101B2278BB007DF25A /* SJDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDiscoverViewController.m; sourceTree = "<group>"; };
 		96BD21151B2278BB007DF25A /* SJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJHomeViewController.h; sourceTree = "<group>"; };
@@ -251,6 +257,10 @@
 		96BD211E1B2278BB007DF25A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				965CFE281B228DEA003D83F2 /* SJTabBar.h */,
+				965CFE291B228DEA003D83F2 /* SJTabBar.m */,
+				96294D801B22A23D0040FAFD /* SJTabbarButton.h */,
+				96294D811B22A23D0040FAFD /* SJTabbarButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +449,8 @@
 				96BD21331B2278BB007DF25A /* SJMeViewController.m in Sources */,
 				96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */,
 				96BD21341B2278BB007DF25A /* SJMessageViewController.m in Sources */,
+				96294D821B22A23D0040FAFD /* SJTabbarButton.m in Sources */,
+				965CFE2A1B228DEA003D83F2 /* SJTabBar.m in Sources */,
 				96BD21311B2278BB007DF25A /* SJHomeViewController.m in Sources */,
 				96BD21361B2278BB007DF25A /* main.m in Sources */,
 				961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */,

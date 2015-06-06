@@ -11,17 +11,45 @@
 #import "SJMessageViewController.h"
 #import "SJDiscoverViewController.h"
 #import "SJMeViewController.h"
+#import "SJTabBar.h"
 
-@interface SJTabBarController ()
-
+@interface SJTabBarController () <SJTabBarDelegate>
+@property (nonatomic,weak) SJTabBar *customTabbar;
 @end
 
 @implementation SJTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化tabbar
+    [self setupTabbar];
+    
     //初始化子控制器
     [self setupAllChildViewControllers];
+    
+    //设置tabbar的代理
+    self.customTabbar.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    for (UIView *child in self.tabBar.subviews) {
+        if ([child isKindOfClass:[UIControl class]]) {
+            [child removeFromSuperview];
+        }
+    }
+}
+
+/**
+ *  初始化tabbar
+ */
+- (void)setupTabbar
+{
+    SJTabBar *customTabbar = [[SJTabBar alloc] init];
+    customTabbar.frame = self.tabBar.frame;
+    [self.view addSubview:customTabbar];
+    self.customTabbar = customTabbar;
 }
 
 /**
@@ -47,7 +75,7 @@
 }
 
 /**
- *  初始化一个自控制器
+ *  初始化一个子控制器
  */
 - (void)setupChildViewController:(UIViewController *)childVc title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
@@ -56,6 +84,15 @@
     UINavigationController *Nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     childVc.title = title;
     [self addChildViewController:Nav];
+    
+    //添加tabbar内部的按钮
+    [self.customTabbar addTabBarButtonWithItem:childVc.tabBarItem];
 }
 
+
+#pragma mark-SJTabBarDelegate
+- (void)tabbar:(SJTabBar *)tabbar didSelectedButtonFrom:(int)from to:(int)to
+{
+    self.selectedIndex = to;
+}
 @end
