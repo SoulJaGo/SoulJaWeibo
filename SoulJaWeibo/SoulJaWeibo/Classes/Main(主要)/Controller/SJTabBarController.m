@@ -51,8 +51,8 @@
  */
 - (void)setupChildViewController:(UIViewController *)childVc title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
-    childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVc.tabBarItem.image = [UIImage imageWithName:imageName];
+    childVc.tabBarItem.selectedImage = [[UIImage imageWithName:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *Nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     childVc.title = title;
     [self addChildViewController:Nav];

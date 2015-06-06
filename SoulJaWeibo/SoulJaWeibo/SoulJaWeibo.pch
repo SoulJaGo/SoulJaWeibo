@@ -1,0 +1,23 @@
+//
+//  SoulJaWeibo.pch
+//  SoulJaWeibo
+//
+//  Created by SoulJa on 15/6/6.
+//  Copyright (c) 2015年 SoulJa. All rights reserved.
+//
+
+#ifndef SoulJaWeibo_SoulJaWeibo_pch
+#define SoulJaWeibo_SoulJaWeibo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+#import "UIImage+SJ.h"
+
+//判断系统版本
+#define iOS7 ([[UIDevice currentDevice].systemVersion floatValue] > 7.0)
+
+
+#endif
+#endif
