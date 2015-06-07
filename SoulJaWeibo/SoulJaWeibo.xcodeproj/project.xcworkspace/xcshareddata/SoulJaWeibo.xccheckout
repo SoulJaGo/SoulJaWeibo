@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>85A0BC95-7A84-4FB3-8425-E5E1EFD7D5FF</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SoulJaWeibo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C5DC78798F664FA99AD4856AA9287F3B9F69B87A</key>
 		<string>https://github.com/SoulJaGo/SoulJaWeibo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SoulJaWeibo/SoulJaWeibo.xcodeproj</string>
+	<string>SoulJaWeibo/SoulJaWeibo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C5DC78798F664FA99AD4856AA9287F3B9F69B87A</key>

@@ -10,4 +10,8 @@
 
 @interface UIImage (SJ)
 + (UIImage *)imageWithName:(NSString *)name;
+/**
+ *  返回一张自由拉伸的图片
+ */
++ (UIImage *)resizeImageWithName:(NSString *)name;
 @end

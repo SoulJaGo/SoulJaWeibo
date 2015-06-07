@@ -59,14 +59,17 @@
 {
     //1.首页
     SJHomeViewController *home = [[SJHomeViewController alloc] init];
+    home.tabBarItem.badgeValue = @"1009";
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     //2.消息
     SJMessageViewController *message = [[SJMessageViewController alloc] init];
+    message.tabBarItem.badgeValue = @"10";
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
     
     //3.广场
     SJDiscoverViewController *discover = [[SJDiscoverViewController alloc] init];
+    discover.tabBarItem.badgeValue = @"new";
     [self setupChildViewController:discover title:@"广场" imageName:@"tabbar_discover" selectedImageName:@"tabbar_discover_selected"];
     
     //4.我
