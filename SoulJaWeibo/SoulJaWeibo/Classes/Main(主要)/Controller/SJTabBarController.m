@@ -59,7 +59,7 @@
 {
     //1.首页
     SJHomeViewController *home = [[SJHomeViewController alloc] init];
-    home.tabBarItem.badgeValue = @"1009";
+    home.tabBarItem.badgeValue = @"19";
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     //2.消息
