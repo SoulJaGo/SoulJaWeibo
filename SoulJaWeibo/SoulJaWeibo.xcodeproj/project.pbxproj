@@ -27,6 +27,7 @@
 		96CBEBB71B25678400E5B68B /* UIBarButtonItem+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB61B25678400E5B68B /* UIBarButtonItem+SJ.m */; };
 		96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB91B256CE200E5B68B /* SJSearchBar.m */; };
 		96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */; };
+		96CBEBC41B25836100E5B68B /* SJNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBC31B25836100E5B68B /* SJNewFeatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		96CBEBB91B256CE200E5B68B /* SJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSearchBar.m; sourceTree = "<group>"; };
 		96CBEBBB1B25730E00E5B68B /* SJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTitleButton.h; sourceTree = "<group>"; };
 		96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTitleButton.m; sourceTree = "<group>"; };
+		96CBEBC21B25836100E5B68B /* SJNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNewFeatureViewController.h; sourceTree = "<group>"; };
+		96CBEBC31B25836100E5B68B /* SJNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNewFeatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,7 @@
 		96BD210C1B2278BB007DF25A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				96CBEBBE1B25833C00E5B68B /* NewFeature(新特性) */,
 				96BD210D1B2278BB007DF25A /* Discover(广场) */,
 				96BD21131B2278BB007DF25A /* Home(首页) */,
 				96BD21191B2278BB007DF25A /* Main(主要) */,
@@ -368,6 +372,39 @@
 			path = "Other(其他)";
 			sourceTree = "<group>";
 		};
+		96CBEBBE1B25833C00E5B68B /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				96CBEBBF1B25833C00E5B68B /* Controller */,
+				96CBEBC01B25833C00E5B68B /* Model */,
+				96CBEBC11B25833C00E5B68B /* View */,
+			);
+			path = "NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
+		96CBEBBF1B25833C00E5B68B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96CBEBC21B25836100E5B68B /* SJNewFeatureViewController.h */,
+				96CBEBC31B25836100E5B68B /* SJNewFeatureViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96CBEBC01B25833C00E5B68B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CBEBC11B25833C00E5B68B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -472,6 +509,7 @@
 				96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */,
 				965CFE271B227F7D003D83F2 /* UIImage+SJ.m in Sources */,
 				96BD21301B2278BB007DF25A /* SJDiscoverViewController.m in Sources */,
+				96CBEBC41B25836100E5B68B /* SJNewFeatureViewController.m in Sources */,
 				96BD21331B2278BB007DF25A /* SJMeViewController.m in Sources */,
 				96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */,
 				96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */,
