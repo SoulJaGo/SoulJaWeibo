@@ -12,6 +12,7 @@
 #import "SJDiscoverViewController.h"
 #import "SJMeViewController.h"
 #import "SJTabBar.h"
+#import "SJNavigationController.h"
 
 @interface SJTabBarController () <SJTabBarDelegate>
 @property (nonatomic,weak) SJTabBar *customTabbar;
@@ -84,7 +85,7 @@
 {
     childVc.tabBarItem.image = [UIImage imageWithName:imageName];
     childVc.tabBarItem.selectedImage = [[UIImage imageWithName:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *Nav = [[UINavigationController alloc] initWithRootViewController:childVc];
+    SJNavigationController *Nav = [[SJNavigationController alloc] initWithRootViewController:childVc];
     childVc.title = title;
     [self addChildViewController:Nav];
     

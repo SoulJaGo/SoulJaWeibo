@@ -21,5 +21,11 @@
 //获取RGB颜色
 #define SJColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 
+#ifdef DEBUG
+#define SJLog(...) NSLog(__VA_ARGS__)
+#else
+#define SJLog(...)
+#endif
+
 #endif
 #endif

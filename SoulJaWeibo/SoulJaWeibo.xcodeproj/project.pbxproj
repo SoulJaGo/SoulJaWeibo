@@ -23,6 +23,10 @@
 		96BD21341B2278BB007DF25A /* SJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD21281B2278BB007DF25A /* SJMessageViewController.m */; };
 		96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD212D1B2278BB007DF25A /* AppDelegate.m */; };
 		96BD21361B2278BB007DF25A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD212E1B2278BB007DF25A /* main.m */; };
+		96CBEBB41B2532E200E5B68B /* SJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB31B2532E200E5B68B /* SJNavigationController.m */; };
+		96CBEBB71B25678400E5B68B /* UIBarButtonItem+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB61B25678400E5B68B /* UIBarButtonItem+SJ.m */; };
+		96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB91B256CE200E5B68B /* SJSearchBar.m */; };
+		96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,14 @@
 		96BD212C1B2278BB007DF25A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96BD212D1B2278BB007DF25A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		96BD212E1B2278BB007DF25A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96CBEBB21B2532E200E5B68B /* SJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavigationController.h; sourceTree = "<group>"; };
+		96CBEBB31B2532E200E5B68B /* SJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavigationController.m; sourceTree = "<group>"; };
+		96CBEBB51B25678400E5B68B /* UIBarButtonItem+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SJ.h"; sourceTree = "<group>"; };
+		96CBEBB61B25678400E5B68B /* UIBarButtonItem+SJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SJ.m"; sourceTree = "<group>"; };
+		96CBEBB81B256CE200E5B68B /* SJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSearchBar.h; sourceTree = "<group>"; };
+		96CBEBB91B256CE200E5B68B /* SJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSearchBar.m; sourceTree = "<group>"; };
+		96CBEBBB1B25730E00E5B68B /* SJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTitleButton.h; sourceTree = "<group>"; };
+		96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +160,8 @@
 			children = (
 				965CFE251B227F7D003D83F2 /* UIImage+SJ.h */,
 				965CFE261B227F7D003D83F2 /* UIImage+SJ.m */,
+				96CBEBB51B25678400E5B68B /* UIBarButtonItem+SJ.h */,
+				96CBEBB61B25678400E5B68B /* UIBarButtonItem+SJ.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -194,6 +208,8 @@
 		96BD21121B2278BB007DF25A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96CBEBB81B256CE200E5B68B /* SJSearchBar.h */,
+				96CBEBB91B256CE200E5B68B /* SJSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +243,8 @@
 		96BD21181B2278BB007DF25A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96CBEBBB1B25730E00E5B68B /* SJTitleButton.h */,
+				96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +264,8 @@
 			children = (
 				96BD211B1B2278BB007DF25A /* SJTabBarController.h */,
 				96BD211C1B2278BB007DF25A /* SJTabBarController.m */,
+				96CBEBB21B2532E200E5B68B /* SJNavigationController.h */,
+				96CBEBB31B2532E200E5B68B /* SJNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -449,17 +469,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				96BD21321B2278BB007DF25A /* SJTabBarController.m in Sources */,
+				96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */,
 				965CFE271B227F7D003D83F2 /* UIImage+SJ.m in Sources */,
 				96BD21301B2278BB007DF25A /* SJDiscoverViewController.m in Sources */,
 				96BD21331B2278BB007DF25A /* SJMeViewController.m in Sources */,
+				96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */,
 				96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */,
 				96BD21341B2278BB007DF25A /* SJMessageViewController.m in Sources */,
 				966E9BFA1B23ED85005B1D49 /* SJBadgeButton.m in Sources */,
+				96CBEBB71B25678400E5B68B /* UIBarButtonItem+SJ.m in Sources */,
 				96294D821B22A23D0040FAFD /* SJTabbarButton.m in Sources */,
 				965CFE2A1B228DEA003D83F2 /* SJTabBar.m in Sources */,
 				96BD21311B2278BB007DF25A /* SJHomeViewController.m in Sources */,
 				96BD21361B2278BB007DF25A /* main.m in Sources */,
 				961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */,
+				96CBEBB41B2532E200E5B68B /* SJNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
