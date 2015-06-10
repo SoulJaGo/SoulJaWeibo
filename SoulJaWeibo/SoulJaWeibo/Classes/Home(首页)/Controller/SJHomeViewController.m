@@ -9,15 +9,68 @@
 #import "SJHomeViewController.h"
 #import "UIBarButtonItem+SJ.h"
 #import "SJTitleButton.h"
+#import "AFNetworking.h"
+#import "SJAccountTool.h"
+#import "UIImageView+WebCache.h"
+#import "SJStatus.h"
+#import "SJUser.h"
+#import "MJExtension.h"
 
 @interface SJHomeViewController ()
-
+@property (nonatomic,strong) NSArray *statuses;
 @end
 
 @implementation SJHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //1.设置导航栏
+    [self setupNavBar];
+    //2.加载微博数据
+    [self setupStatusData];
+}
+
+/**
+ *  加载微博数据
+ */
+- (void)setupStatusData
+{
+    //1.发起请求
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    //2.请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [SJAccountTool account].access_token;
+    
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //取出所有的微博数据
+        NSArray *dictArray = responseObject[@"statuses"];
+        
+        //将字典数据转换为模型数据
+//        NSMutableArray *statusArray = [NSMutableArray array];
+//        for (NSDictionary *dict in dictArray) {
+//            //创建模型
+//            SJStatus *status = [SJStatus objectWithKeyValues:dict];
+//            
+//            //添加模型
+//            [statusArray addObject:status];
+//        }
+    
+        self.statuses = [SJStatus objectArrayWithKeyValuesArray:dictArray];
+        
+        //刷新表格
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+/**
+ *  设置导航栏
+ */
+- (void)setupNavBar
+{
     //左边的按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
     //右边的按钮
@@ -69,7 +122,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 15;
+    return self.statuses.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,16 +130,22 @@
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    cell.textLabel.text = @"haha";
+    SJStatus *status = self.statuses[indexPath.row];
+    cell.textLabel.text = status.text;
+    SJUser *user = status.user;
+    cell.detailTextLabel.text = user.name;
+    
+    //微博作者的头像
+    NSString *iconUrl = user.profile_image_url;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:iconUrl]
+                      placeholderImage:[UIImage imageWithName:@"icon"]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor redColor];
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 @end
