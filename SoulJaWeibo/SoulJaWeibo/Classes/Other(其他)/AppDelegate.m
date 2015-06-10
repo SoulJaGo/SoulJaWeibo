@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "SJTabBarController.h"
 #import "SJNewFeatureViewController.h"
+#import "SJOAuthViewController.h"
+#import "SJAccount.h"
+#import "SJWeiboTool.h"
+#import "SJAccountTool.h"
 
 @interface AppDelegate ()
 
@@ -21,25 +25,20 @@
 {
     //初始化Window
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    //设置statusbar出现
-    [UIApplication sharedApplication].statusBarHidden = NO;
-    
-    //取出沙盒中当前版本号
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *lastCode = [defaults stringForKey:@"versionCode"];
-    //获得当前软件的版本号
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-    //设置Window的根控制器
-    if ([currentVersion isEqualToString:lastCode]) {
-        self.window.rootViewController = [[SJTabBarController alloc] init];
-    } else {
-        self.window.rootViewController = [[SJNewFeatureViewController alloc] init];
-        [defaults setObject:currentVersion forKey:@"versionCode"];
-        [defaults synchronize];
-    }
-    
     //Window显示
     [self.window makeKeyAndVisible];
+    //设置statusbar出现
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    //先判断有误账号信息
+    SJAccount *account = [SJAccountTool account];
+    if (!account) {
+        self.window.rootViewController = [[SJOAuthViewController alloc] init];
+    } else {
+        [SJWeiboTool chooseRootController];
+    }
+        
+    
+    
     return YES;
 }
 

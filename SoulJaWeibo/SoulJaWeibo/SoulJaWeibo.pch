@@ -21,6 +21,11 @@
 //获取RGB颜色
 #define SJColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 
+//AppKey
+#define AppKey @"3597719055"
+//AppSecret
+#define AppSecret @"72a72a908ef1e036f129b7de52d57c26"
+
 #ifdef DEBUG
 #define SJLog(...) NSLog(__VA_ARGS__)
 #else
