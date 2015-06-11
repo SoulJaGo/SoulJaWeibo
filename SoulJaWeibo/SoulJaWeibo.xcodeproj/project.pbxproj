@@ -17,6 +17,7 @@
 		965CFE2A1B228DEA003D83F2 /* SJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 965CFE291B228DEA003D83F2 /* SJTabBar.m */; };
 		966E9BFA1B23ED85005B1D49 /* SJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 966E9BF91B23ED85005B1D49 /* SJBadgeButton.m */; };
 		9692EADD1B29C48E00767D7A /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 9692EADC1B29C48E00767D7A /* NSDate+MJ.m */; };
+		9692EAE01B29D00200767D7A /* SJStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9692EADF1B29D00200767D7A /* SJStatusToolbar.m */; };
 		96AB23AB1B279EF3005C6FB6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB23991B279EF3005C6FB6 /* AFHTTPRequestOperation.m */; };
 		96AB23AC1B279EF3005C6FB6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB239B1B279EF3005C6FB6 /* AFHTTPRequestOperationManager.m */; };
 		96AB23AD1B279EF3005C6FB6 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB239D1B279EF3005C6FB6 /* AFHTTPSessionManager.m */; };
@@ -106,6 +107,8 @@
 		966E9BF91B23ED85005B1D49 /* SJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJBadgeButton.m; sourceTree = "<group>"; };
 		9692EADB1B29C48E00767D7A /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		9692EADC1B29C48E00767D7A /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
+		9692EADE1B29D00200767D7A /* SJStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStatusToolbar.h; sourceTree = "<group>"; };
+		9692EADF1B29D00200767D7A /* SJStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStatusToolbar.m; sourceTree = "<group>"; };
 		96AB23981B279EF3005C6FB6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		96AB23991B279EF3005C6FB6 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		96AB239A1B279EF3005C6FB6 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -547,6 +550,8 @@
 				96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */,
 				96CD0C421B290E69008E03AA /* SJStatusCell.h */,
 				96CD0C431B290E69008E03AA /* SJStatusCell.m */,
+				9692EADE1B29D00200767D7A /* SJStatusToolbar.h */,
+				9692EADF1B29D00200767D7A /* SJStatusToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 				96AB24471B287CCD005C6FB6 /* MJConst.m in Sources */,
 				966E9BFA1B23ED85005B1D49 /* SJBadgeButton.m in Sources */,
 				96CBEBB71B25678400E5B68B /* UIBarButtonItem+SJ.m in Sources */,
+				9692EAE01B29D00200767D7A /* SJStatusToolbar.m in Sources */,
 				96AB244E1B287CCD005C6FB6 /* NSString+Extension.m in Sources */,
 				96AB23B01B279EF3005C6FB6 /* AFURLConnectionOperation.m in Sources */,
 				96AB23B11B279EF3005C6FB6 /* AFURLRequestSerialization.m in Sources */,

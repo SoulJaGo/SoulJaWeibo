@@ -11,6 +11,7 @@
 #import "SJStatus.h"
 #import "SJUser.h"
 #import "UIImageView+WebCache.h"
+#import "SJStatusToolbar.h"
 @interface SJStatusCell ()
 /**
  *  顶部的View
@@ -64,7 +65,7 @@
 /*
  *  微博的工具条
  */
-@property (nonatomic,weak) UIImageView *statusToolbar;
+@property (nonatomic,weak) SJStatusToolbar *statusToolbar;
 @end
 @implementation SJStatusCell
 - (id)initWithFrame:(CGRect)frame
@@ -176,8 +177,7 @@
  */
 - (void)setupStatusToolbar
 {
-    UIImageView *statusToolbar = [[UIImageView alloc] init];
-    statusToolbar.image = [UIImage resizeImageWithName:@"timeline_card_bottom_background"];
+    SJStatusToolbar *statusToolbar = [[SJStatusToolbar alloc] init];
     [self.contentView addSubview:statusToolbar];
     self.statusToolbar = statusToolbar;
 }
