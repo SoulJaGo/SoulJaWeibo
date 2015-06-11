@@ -75,7 +75,7 @@
         //2.添加转发微博内部的子控件
         [self setupRetweetSubviews];
         //3.添加微博工具条
-        [self setupStatusTooBar];
+        [self setupStatusToolbar];
     }
     return self;
 }
@@ -87,6 +87,7 @@
 {
     //1.最外面的父控件
     UIImageView *topView = [[UIImageView alloc] init];
+    topView.image = [UIImage resizeImageWithName:@"timeline_card_top_background"];
     [self.contentView addSubview:topView];
     self.topView = topView;
     
@@ -97,6 +98,7 @@
     
     //3.会员图标
     UIImageView *vipView = [[UIImageView alloc] init];
+    vipView.contentMode = UIViewContentModeCenter;
     [self.topView addSubview:vipView];
     self.vipView = vipView;
     
@@ -107,24 +109,29 @@
     
     //5.昵称
     UILabel *nameLabel = [[UILabel alloc] init];
+    nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.font = SJStatusNameFont;
     [self.topView addSubview:nameLabel];
     self.namelabel = nameLabel;
     
     //6.时间
     UILabel *timeLabel = [[UILabel alloc] init];
+    timeLabel.backgroundColor = [UIColor clearColor];
+    timeLabel.textColor = SJColor(245, 140, 19);
     timeLabel.font = SJStatusTimeFont;
     [self.topView addSubview:timeLabel];
     self.timeLabel = timeLabel;
     
     //7.来源
     UILabel *sourceLabel = [[UILabel alloc] init];
+    sourceLabel.backgroundColor = [UIColor clearColor];
     sourceLabel.font = SJStatusSourceFont;
     [self.topView addSubview:sourceLabel];
     self.sourceLabel = sourceLabel;
     
     //8.正文
     UILabel *contentLabel = [[UILabel alloc] init];
+    contentLabel.backgroundColor = [UIColor clearColor];
     contentLabel.font = SJStatusContentFont;
     contentLabel.numberOfLines = 0;
     [self.topView addSubview:contentLabel];
@@ -138,17 +145,21 @@
 {
     //被转发的View
     UIImageView *retweetView = [[UIImageView alloc] init];
+    retweetView.image = [UIImage resizeImageWithName:@"timeline_retweet_background"];
     [self.contentView addSubview:retweetView];
     self.rewteetView = retweetView;
     
     //被转发微博昵称
     UILabel *retweetNameLabel = [[UILabel alloc] init];
     retweetNameLabel.font = SJRetweetStatusNameFont;
+    retweetNameLabel.backgroundColor = [UIColor clearColor];
+    retweetNameLabel.textColor = [UIColor blueColor];
     [self.rewteetView addSubview:retweetNameLabel];
     self.rewteetNamelabel = retweetNameLabel;
     
     //被转发正文
     UILabel *retweetContentLabel = [[UILabel alloc] init];
+    retweetContentLabel.backgroundColor = [UIColor clearColor];
     retweetContentLabel.font = SJRetweetStatusContentFont;
     retweetContentLabel.numberOfLines = 0;
     [self.rewteetView addSubview:retweetContentLabel];
@@ -163,9 +174,10 @@
 /**
  *  添加微博工具条
  */
-- (void)setupStatusTooBar
+- (void)setupStatusToolbar
 {
     UIImageView *statusToolbar = [[UIImageView alloc] init];
+    statusToolbar.image = [UIImage resizeImageWithName:@"timeline_card_bottom_background"];
     [self.contentView addSubview:statusToolbar];
     self.statusToolbar = statusToolbar;
 }
@@ -177,6 +189,8 @@
     [self setupOriginalData];
     //2.添加转发微博
     [self setupRetweetData];
+    //3.添加底部导航栏
+    [self setupStatusToolbarData];
 }
 
 - (void)setupOriginalData
@@ -197,9 +211,10 @@
     self.namelabel.frame = self.statusFrame.namelabelF;
     
     //4.vip
-    if (user.isVip) {
+    if (user.mbrank=1) {
         self.vipView.hidden = NO;
-        self.vipView.image = [UIImage imageWithName:@"common_icon_membership"];
+        NSString *imageUrl = [NSString stringWithFormat:@"common_icon_membership_level%d",user.mbrank + arc4random_uniform(3)];
+        self.vipView.image = [UIImage imageWithName:imageUrl];
         self.vipView.frame = self.statusFrame.vipViewF;
     } else {
         self.vipView.hidden = YES;
@@ -207,11 +222,17 @@
     
     //5.时间
     self.timeLabel.text = status.created_at;
-    self.timeLabel.frame = self.statusFrame.timeLabelF;
+    CGFloat timeLabelX = self.statusFrame.namelabelF.origin.x;
+    CGFloat timeLabelY = CGRectGetMaxY(self.statusFrame.namelabelF) + SJStatusCellBorder;
+    CGSize timeLabelSize = [status.created_at boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:SJStatusTimeFont} context:nil].size;
+    self.timeLabel.frame = (CGRect){{timeLabelX,timeLabelY},timeLabelSize};
     
     //6.来源
     self.sourceLabel.text = status.source;
-    self.sourceLabel.frame = self.statusFrame.sourceLabelF;
+    CGFloat sourceLabelX = CGRectGetMaxX(self.timeLabel.frame) + SJStatusCellBorder;
+    CGFloat sourceLabelY = timeLabelY;
+    CGSize sourceLabelSize = [status.source boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:SJStatusSourceFont} context:nil].size;
+    self.sourceLabel.frame = (CGRect){{sourceLabelX,sourceLabelY},sourceLabelSize};
     
     //7.正文
     self.contentLabel.text = status.text;
@@ -238,7 +259,7 @@
         self.rewteetView.frame = self.statusFrame.rewteetViewF;
         
         //2.昵称
-        self.rewteetNamelabel.text = user.name;
+        self.rewteetNamelabel.text = [NSString stringWithFormat:@"@%@",user.name];
         self.rewteetNamelabel.frame = self.statusFrame.rewteetNamelabelF;
         
         //3.正文
@@ -259,6 +280,11 @@
     
 }
 
+- (void)setupStatusToolbarData
+{
+    self.statusToolbar.frame = self.statusFrame.statusToolbarF;
+}
+
 + (instancetype) cellWithTableView:(UITableView *)tableView
 {
     static NSString *ID = @"status";
@@ -267,5 +293,17 @@
         cell = [[SJStatusCell alloc] init];
     }
     return cell;
+}
+
+/**
+ *  重写Frame
+ */
+- (void)setFrame:(CGRect)frame
+{
+    frame.origin.x = SJStatusTableBorder;
+    frame.size.width -= 2 * SJStatusTableBorder;
+    frame.origin.y -= SJStatusTableBorder;
+    frame.size.height -= SJStatusTableBorder;
+    [super setFrame:frame];
 }
 @end

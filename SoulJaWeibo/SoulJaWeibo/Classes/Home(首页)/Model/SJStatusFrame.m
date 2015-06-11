@@ -12,7 +12,7 @@
 /**
  *  cell的边框边距
  */
-#define SJStatusCellBorder 5
+
 
 @implementation SJStatusFrame
 /**
@@ -23,7 +23,7 @@
     _status = status;
     
     //cell的宽度
-    CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat cellW = [UIScreen mainScreen].bounds.size.width - 2 *SJStatusTableBorder;
     
     //topView
     CGFloat topViewW = cellW;
@@ -44,7 +44,7 @@
     _namelabelF = (CGRect){{nameLabelX,nameLabelY},nameLabelSize};
     
     //会员图标
-    if (status.user.vip) {
+    if (status.user.mbrank=1) {
         CGFloat vipViewW = 14;
         CGFloat vipViewH = nameLabelSize.height;
         CGFloat vipViewX = CGRectGetMaxX(_namelabelF) + SJStatusCellBorder;
@@ -88,7 +88,8 @@
         //被转发微博昵称
         CGFloat retweetNameLabelX = SJStatusCellBorder;
         CGFloat retweetNameLabelY = SJStatusCellBorder;
-        CGSize retweetNameLabelSize = [status.retweeted_status.user.name boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:SJRetweetStatusNameFont} context:nil].size;
+        NSString *name = [NSString stringWithFormat:@"@%@",status.retweeted_status.user.name];
+        CGSize retweetNameLabelSize = [name boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:SJRetweetStatusNameFont} context:nil].size;
         _rewteetNamelabelF = (CGRect){{retweetNameLabelX,retweetNameLabelY},retweetNameLabelSize};
         
         //被转发的微博正文
@@ -124,8 +125,16 @@
     
     topViewH += SJStatusCellBorder;
     _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
+    
+    //13.工具条
+    CGFloat statusToolbarX = topViewX;
+    CGFloat statusToolbarY = CGRectGetMaxY(_topViewF);
+    CGFloat statusToolbarW = topViewW;
+    CGFloat statusToolbarH = 35;
+    _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
+    
     //cell高度
-    _cellHeight = topViewH;
+    _cellHeight = CGRectGetMaxY(_statusToolbarF) + SJStatusTableBorder;
     
 }
 @end

@@ -17,6 +17,10 @@
 
 #define SJRetweetStatusContentFont SJStatusContentFont
 #define SJRetweetStatusNameFont SJStatusNameFont
+
+#define SJStatusTableBorder 5
+
+#define SJStatusCellBorder 5
 @class SJStatus;
 @interface SJStatusFrame : NSObject
 @property (nonatomic,strong) SJStatus *status;
