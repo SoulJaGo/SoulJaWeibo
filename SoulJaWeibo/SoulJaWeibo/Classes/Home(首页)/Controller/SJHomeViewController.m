@@ -15,9 +15,11 @@
 #import "SJStatus.h"
 #import "SJUser.h"
 #import "MJExtension.h"
+#import "SJStatusFrame.h"
+#import "SJStatusCell.h"
 
 @interface SJHomeViewController ()
-@property (nonatomic,strong) NSArray *statuses;
+@property (nonatomic,strong) NSArray *statusFrames;
 @end
 
 @implementation SJHomeViewController
@@ -55,8 +57,17 @@
 //            //添加模型
 //            [statusArray addObject:status];
 //        }
+        NSArray *statusArray = [SJStatus objectArrayWithKeyValuesArray:dictArray];
+        
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
     
-        self.statuses = [SJStatus objectArrayWithKeyValuesArray:dictArray];
+        for (SJStatus *status in statusArray) {
+            SJStatusFrame *statusFrame = [[SJStatusFrame alloc] init];
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
+        
+        self.statusFrames = statusFrameArray;
         
         //刷新表格
         [self.tableView reloadData];
@@ -122,26 +133,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.statuses.count;
+    return self.statusFrames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    SJStatus *status = self.statuses[indexPath.row];
-    cell.textLabel.text = status.text;
-    SJUser *user = status.user;
-    cell.detailTextLabel.text = user.name;
-    
-    //微博作者的头像
-    NSString *iconUrl = user.profile_image_url;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:iconUrl]
-                      placeholderImage:[UIImage imageWithName:@"icon"]];
+    SJStatusCell *cell = [SJStatusCell cellWithTableView:tableView];
+    cell.statusFrame = self.statusFrames[indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SJStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    return statusFrame.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

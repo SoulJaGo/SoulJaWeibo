@@ -70,6 +70,8 @@
 		96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB91B256CE200E5B68B /* SJSearchBar.m */; };
 		96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */; };
 		96CBEBC41B25836100E5B68B /* SJNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBC31B25836100E5B68B /* SJNewFeatureViewController.m */; };
+		96CD0C441B290E69008E03AA /* SJStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD0C431B290E69008E03AA /* SJStatusCell.m */; };
+		96CD0C471B292C8F008E03AA /* SJStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD0C461B292C8F008E03AA /* SJStatusFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +212,10 @@
 		96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTitleButton.m; sourceTree = "<group>"; };
 		96CBEBC21B25836100E5B68B /* SJNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNewFeatureViewController.h; sourceTree = "<group>"; };
 		96CBEBC31B25836100E5B68B /* SJNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNewFeatureViewController.m; sourceTree = "<group>"; };
+		96CD0C421B290E69008E03AA /* SJStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStatusCell.h; sourceTree = "<group>"; };
+		96CD0C431B290E69008E03AA /* SJStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStatusCell.m; sourceTree = "<group>"; };
+		96CD0C451B292C8F008E03AA /* SJStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStatusFrame.h; sourceTree = "<group>"; };
+		96CD0C461B292C8F008E03AA /* SJStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStatusFrame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -523,6 +529,8 @@
 				96AB24301B28747A005C6FB6 /* SJStatus.m */,
 				96AB24321B287600005C6FB6 /* SJUser.h */,
 				96AB24331B287600005C6FB6 /* SJUser.m */,
+				96CD0C451B292C8F008E03AA /* SJStatusFrame.h */,
+				96CD0C461B292C8F008E03AA /* SJStatusFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,6 +540,8 @@
 			children = (
 				96CBEBBB1B25730E00E5B68B /* SJTitleButton.h */,
 				96CBEBBC1B25730E00E5B68B /* SJTitleButton.m */,
+				96CD0C421B290E69008E03AA /* SJStatusCell.h */,
+				96CD0C431B290E69008E03AA /* SJStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +831,8 @@
 				96AB24231B286B72005C6FB6 /* SDWebImageDecoder.m in Sources */,
 				96AB24261B286B72005C6FB6 /* SDWebImageManager.m in Sources */,
 				96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */,
+				96CD0C441B290E69008E03AA /* SJStatusCell.m in Sources */,
+				96CD0C471B292C8F008E03AA /* SJStatusFrame.m in Sources */,
 				96AB23C71B27BBF5005C6FB6 /* SJAccountTool.m in Sources */,
 				96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */,
 				96BD21341B2278BB007DF25A /* SJMessageViewController.m in Sources */,

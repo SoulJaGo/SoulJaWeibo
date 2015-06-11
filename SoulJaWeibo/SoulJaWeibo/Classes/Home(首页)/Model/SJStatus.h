@@ -22,6 +22,11 @@
  */
 @property (nonatomic,copy) NSString *idstr;
 /**
+ *  微博的时间
+ */
+@property (nonatomic,copy) NSString *created_at;
+
+/**
  *  微博的转发数
  */
 @property (nonatomic,assign) long long reposts_count;
@@ -33,5 +38,16 @@
  *  微博用户
  */
 @property (nonatomic,strong) SJUser *user;
-
+/**
+ *  微博的单张配图
+ */
+@property (nonatomic,copy) NSString *thumbnail_pic;
+/**
+ *  被转发的微博
+ */
+@property (nonatomic,strong) SJStatus *retweeted_status;
+/**
+ *  微博的点赞数
+ */
+@property (nonatomic,assign) long long attitude_count;
 @end
