@@ -11,6 +11,7 @@
 #import "SJStatus.h"
 #import "SJUser.h"
 #import "UIImageView+WebCache.h"
+#import "SJPhoto.h"
 @interface SJReweetStatusView ()
 /**
  *  被转发微博昵称
@@ -71,10 +72,11 @@
     self.rewteetContentLabel.frame = self.statusFrame.rewteetContentLabelF;
     
     //配图
-    if (reweetStatus.thumbnail_pic) {
+    if (reweetStatus.pic_urls) {
         self.rewteetPhotoView.hidden = NO;
         self.rewteetPhotoView.frame = self.statusFrame.rewteetPhotoViewF;
-        [self.rewteetPhotoView sd_setImageWithURL:[NSURL URLWithString:reweetStatus.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"avatar_default"]];
+        SJPhoto *photo = reweetStatus.pic_urls[0];
+        [self.rewteetPhotoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"avatar_default"]];
     } else {
         self.rewteetPhotoView.hidden = YES;
     }
