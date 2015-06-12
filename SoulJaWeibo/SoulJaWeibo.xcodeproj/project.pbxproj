@@ -74,6 +74,8 @@
 		96CBEBC41B25836100E5B68B /* SJNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBC31B25836100E5B68B /* SJNewFeatureViewController.m */; };
 		96CD0C441B290E69008E03AA /* SJStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD0C431B290E69008E03AA /* SJStatusCell.m */; };
 		96CD0C471B292C8F008E03AA /* SJStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD0C461B292C8F008E03AA /* SJStatusFrame.m */; };
+		96D8E1EA1B2A85E800D9DDB0 /* SJReweetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D8E1E91B2A85E800D9DDB0 /* SJReweetStatusView.m */; };
+		96D8E1ED1B2AB3E100D9DDB0 /* SJStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D8E1EC1B2AB3E100D9DDB0 /* SJStatusTopView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +224,10 @@
 		96CD0C431B290E69008E03AA /* SJStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStatusCell.m; sourceTree = "<group>"; };
 		96CD0C451B292C8F008E03AA /* SJStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStatusFrame.h; sourceTree = "<group>"; };
 		96CD0C461B292C8F008E03AA /* SJStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStatusFrame.m; sourceTree = "<group>"; };
+		96D8E1E81B2A85E800D9DDB0 /* SJReweetStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJReweetStatusView.h; sourceTree = "<group>"; };
+		96D8E1E91B2A85E800D9DDB0 /* SJReweetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJReweetStatusView.m; sourceTree = "<group>"; };
+		96D8E1EB1B2AB3E100D9DDB0 /* SJStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStatusTopView.h; sourceTree = "<group>"; };
+		96D8E1EC1B2AB3E100D9DDB0 /* SJStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStatusTopView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,6 +558,10 @@
 				96CD0C431B290E69008E03AA /* SJStatusCell.m */,
 				9692EADE1B29D00200767D7A /* SJStatusToolbar.h */,
 				9692EADF1B29D00200767D7A /* SJStatusToolbar.m */,
+				96D8E1E81B2A85E800D9DDB0 /* SJReweetStatusView.h */,
+				96D8E1E91B2A85E800D9DDB0 /* SJReweetStatusView.m */,
+				96D8E1EB1B2AB3E100D9DDB0 /* SJStatusTopView.h */,
+				96D8E1EC1B2AB3E100D9DDB0 /* SJStatusTopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -818,6 +828,7 @@
 				96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */,
 				96AB23AF1B279EF3005C6FB6 /* AFSecurityPolicy.m in Sources */,
 				96AB23AC1B279EF3005C6FB6 /* AFHTTPRequestOperationManager.m in Sources */,
+				96D8E1EA1B2A85E800D9DDB0 /* SJReweetStatusView.m in Sources */,
 				96AB23BA1B279F7B005C6FB6 /* MBProgressHUD+MJ.m in Sources */,
 				96AB242D1B286B72005C6FB6 /* UIImageView+WebCache.m in Sources */,
 				96AB24481B287CCD005C6FB6 /* MJFoundation.m in Sources */,
@@ -838,6 +849,7 @@
 				96AB24221B286B72005C6FB6 /* SDWebImageCompat.m in Sources */,
 				96AB24241B286B72005C6FB6 /* SDWebImageDownloader.m in Sources */,
 				96AB24251B286B72005C6FB6 /* SDWebImageDownloaderOperation.m in Sources */,
+				96D8E1ED1B2AB3E100D9DDB0 /* SJStatusTopView.m in Sources */,
 				96AB244C1B287CCD005C6FB6 /* NSObject+MJKeyValue.m in Sources */,
 				96AB24231B286B72005C6FB6 /* SDWebImageDecoder.m in Sources */,
 				96AB24261B286B72005C6FB6 /* SDWebImageManager.m in Sources */,
