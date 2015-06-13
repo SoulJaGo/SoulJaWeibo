@@ -41,7 +41,8 @@
 /**
  *  微博的单张配图
  */
-@property (nonatomic,copy) NSString *thumbnail_pic;
+//@property (nonatomic,copy) NSString *thumbnail_pic;
+@property (nonatomic,strong) NSArray *pic_urls;
 /**
  *  被转发的微博
  */
