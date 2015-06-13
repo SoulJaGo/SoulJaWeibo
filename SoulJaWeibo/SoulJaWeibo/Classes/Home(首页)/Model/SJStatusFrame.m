@@ -9,7 +9,6 @@
 #import "SJStatusFrame.h"
 #import "SJStatus.h"
 #import "SJUser.h"
-#import "SJPhoto.h"
 /**
  *  cell的边框边距
  */
@@ -72,7 +71,7 @@
     _contentLabelF = (CGRect){{contentLabelX,contentLabelY},contentLabelSize};
     
     //配图
-    if (status.pic_urls.count) {
+    if (status.thumbnail_pic) {
         CGFloat photoViewWH = 70;
         CGFloat photoViewX = contentLabelX;
         CGFloat photoViewY = CGRectGetMaxY(_contentLabelF) + SJStatusCellBorder;
@@ -101,7 +100,7 @@
         _rewteetContentLabelF = (CGRect){{retweetContentLabelX,retweetContentLabelY},retweetContentLabelSize};
         
         //被转发微博的配图
-        if (status.retweeted_status.pic_urls.count) {
+        if (status.retweeted_status.thumbnail_pic) {
             CGFloat retweetPhotoViewWH = 70;
             CGFloat retweetPhotoViewX = retweetContentLabelX;
             CGFloat retweetPhotoViewY = CGRectGetMaxY(_rewteetContentLabelF) + SJStatusCellBorder;
@@ -117,7 +116,7 @@
         //有转发微博时topView
         topViewH = CGRectGetMaxY(_rewteetViewF);
     } else {
-        if (status.pic_urls.count) {
+        if (status.thumbnail_pic) {
             topViewH = CGRectGetMaxY(_photoViewF);
         } else {
             topViewH = CGRectGetMaxY(_contentLabelF);
