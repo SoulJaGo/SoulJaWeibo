@@ -17,6 +17,7 @@
 #import "MJExtension.h"
 #import "SJStatusFrame.h"
 #import "SJStatusCell.h"
+#import "SJPhoto.h"
 
 @interface SJHomeViewController ()
 @property (nonatomic,strong) NSArray *statusFrames;
@@ -47,7 +48,6 @@
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //取出所有的微博数据
         NSArray *dictArray = responseObject[@"statuses"];
-        
         //将字典数据转换为模型数据
 //        NSMutableArray *statusArray = [NSMutableArray array];
 //        for (NSDictionary *dict in dictArray) {
@@ -64,6 +64,7 @@
         for (SJStatus *status in statusArray) {
             SJStatusFrame *statusFrame = [[SJStatusFrame alloc] init];
             statusFrame.status = status;
+            
             [statusFrameArray addObject:statusFrame];
         }
         
