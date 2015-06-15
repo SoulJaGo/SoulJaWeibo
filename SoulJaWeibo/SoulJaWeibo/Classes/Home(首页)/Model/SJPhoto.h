@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SJPhoto : NSObject
-
+/**
+ *  微博的单张配图
+ */
+@property (nonatomic,copy) NSString *thumbnail_pic;
 @end

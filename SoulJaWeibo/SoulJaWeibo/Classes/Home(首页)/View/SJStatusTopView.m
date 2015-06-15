@@ -12,6 +12,7 @@
 #import "SJUser.h"
 #import "UIImageView+WebCache.h"
 #import "SJReweetStatusView.h"
+#import "SJPhoto.h"
 
 @interface SJStatusTopView ()
 /**
@@ -153,10 +154,11 @@
     self.contentLabel.frame = self.statusFrame.contentLabelF;
     
     //8.配图
-    if (status.thumbnail_pic) {
+    if (status.pic_urls.count) {
         self.photoView.hidden = NO;
         self.photoView.frame = self.statusFrame.photoViewF;
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:status.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"avatar_default"]];
+        SJPhoto *photo = status.pic_urls[0];
+        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"avatar_default"]];
     } else {
         self.photoView.hidden = YES;
     }
