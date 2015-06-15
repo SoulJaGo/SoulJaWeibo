@@ -9,15 +9,8 @@
 #import "SJStatus.h"
 #import "SJUser.h"
 #import "NSDate+MJ.h"
-#import "MJExtension.h"
-#import "SJPhoto.h"
 
 @implementation SJStatus
-+ (NSDictionary *)objectClassInArray
-{
-    return @{@"pic_urls":[SJPhoto class]};
-}
-
 - (NSString *)created_at
 {
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
