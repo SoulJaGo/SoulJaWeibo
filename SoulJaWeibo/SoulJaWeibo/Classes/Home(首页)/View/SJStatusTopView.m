@@ -12,6 +12,7 @@
 #import "SJUser.h"
 #import "UIImageView+WebCache.h"
 #import "SJReweetStatusView.h"
+#import "SJStatusPhotosView.h"
 
 @interface SJStatusTopView ()
 /**
@@ -25,7 +26,7 @@
 /**
  *  配图
  */
-@property (nonatomic,weak) UIImageView *photoView;
+@property (nonatomic,weak) SJStatusPhotosView *photosView;
 /**
  *  昵称
  */
@@ -53,6 +54,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizeImageWithName:@"timeline_card_top_background"];
         
         //2.头像
@@ -67,9 +69,9 @@
         self.vipView = vipView;
         
         //4.配图
-        UIImageView *photoView = [[UIImageView alloc] init];
-        [self addSubview:photoView];
-        self.photoView = photoView;
+        SJStatusPhotosView *photosView = [[SJStatusPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
         
         //5.昵称
         UILabel *nameLabel = [[UILabel alloc] init];
@@ -153,12 +155,12 @@
     self.contentLabel.frame = self.statusFrame.contentLabelF;
     
     //8.配图
-    if (status.thumbnail_pic) {
-        self.photoView.hidden = NO;
-        self.photoView.frame = self.statusFrame.photoViewF;
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:status.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"avatar_default"]];
+    if (status.pic_urls.count) {
+        self.photosView.hidden = NO;
+        self.photosView.frame = self.statusFrame.photosViewF;
+        self.photosView.pic_urls = status.pic_urls;
     } else {
-        self.photoView.hidden = YES;
+        self.photosView.hidden = YES;
     }
     
     //9.转发微博的数据

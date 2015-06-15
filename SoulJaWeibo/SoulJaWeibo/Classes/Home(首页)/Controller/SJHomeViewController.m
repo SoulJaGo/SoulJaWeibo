@@ -17,6 +17,7 @@
 #import "MJExtension.h"
 #import "SJStatusFrame.h"
 #import "SJStatusCell.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface SJHomeViewController ()
 @property (nonatomic,strong) NSArray *statusFrames;
@@ -43,6 +44,7 @@
     //2.请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [SJAccountTool account].access_token;
+    params[@"count"] = @5;
     
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //取出所有的微博数据
@@ -73,7 +75,8 @@
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        NSLog(@"%@",error);
+        //[MBProgressHUD showError:[NSString stringWithFormat:@"%@",error]];
     }];
     
 }

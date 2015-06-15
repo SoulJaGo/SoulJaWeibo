@@ -11,6 +11,8 @@
 #import "SJStatus.h"
 #import "SJUser.h"
 #import "UIImageView+WebCache.h"
+#import "SJPhoto.h"
+#import "SJStatusPhotosView.h"
 @interface SJReweetStatusView ()
 /**
  *  被转发微博昵称
@@ -23,13 +25,14 @@
 /**
  *  配图
  */
-@property (nonatomic,weak) UIImageView *rewteetPhotoView;
+@property (nonatomic,weak) SJStatusPhotosView *rewteetPhotosView;
 @end
 @implementation SJReweetStatusView
 - (id) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizeImageWithName:@"timeline_retweet_background"];
         //被转发微博昵称
         UILabel *retweetNameLabel = [[UILabel alloc] init];
@@ -48,9 +51,9 @@
         self.rewteetContentLabel = retweetContentLabel;
         
         //配图
-        UIImageView *retweetPhotoView = [[UIImageView alloc] init];
-        [self addSubview:retweetPhotoView];
-        self.rewteetPhotoView = retweetPhotoView;
+        SJStatusPhotosView *retweetPhotosView = [[SJStatusPhotosView alloc] init];
+        [self addSubview:retweetPhotosView];
+        self.rewteetPhotosView = retweetPhotosView;
     }
     return self;
 }
@@ -71,12 +74,12 @@
     self.rewteetContentLabel.frame = self.statusFrame.rewteetContentLabelF;
     
     //配图
-    if (reweetStatus.thumbnail_pic) {
-        self.rewteetPhotoView.hidden = NO;
-        self.rewteetPhotoView.frame = self.statusFrame.rewteetPhotoViewF;
-        [self.rewteetPhotoView sd_setImageWithURL:[NSURL URLWithString:reweetStatus.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"avatar_default"]];
+    if (reweetStatus.pic_urls.count) {
+        self.rewteetPhotosView.hidden = NO;
+        self.rewteetPhotosView.frame = self.statusFrame.rewteetPhotosViewF;
+        self.rewteetPhotosView.pic_urls = reweetStatus.pic_urls;
     } else {
-        self.rewteetPhotoView.hidden = YES;
+        self.rewteetPhotosView.hidden = YES;
     }
 
 }

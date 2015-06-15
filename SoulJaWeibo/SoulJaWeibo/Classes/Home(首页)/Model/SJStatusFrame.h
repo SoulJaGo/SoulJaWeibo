@@ -39,7 +39,7 @@
 /**
  *  配图
  */
-@property (nonatomic,assign,readonly) CGRect photoViewF;
+@property (nonatomic,assign,readonly) CGRect photosViewF;
 /**
  *  昵称
  */
@@ -72,7 +72,7 @@
 /**
  *  配图
  */
-@property (nonatomic,assign) CGRect rewteetPhotoViewF;
+@property (nonatomic,assign) CGRect rewteetPhotosViewF;
 /*
  *  微博的工具条
  */

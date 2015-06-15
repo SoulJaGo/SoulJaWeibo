@@ -9,6 +9,7 @@
 #import "SJStatusFrame.h"
 #import "SJStatus.h"
 #import "SJUser.h"
+#import "SJStatusPhotosView.h"
 /**
  *  cell的边框边距
  */
@@ -71,11 +72,11 @@
     _contentLabelF = (CGRect){{contentLabelX,contentLabelY},contentLabelSize};
     
     //配图
-    if (status.thumbnail_pic) {
-        CGFloat photoViewWH = 70;
-        CGFloat photoViewX = contentLabelX;
-        CGFloat photoViewY = CGRectGetMaxY(_contentLabelF) + SJStatusCellBorder;
-        _photoViewF = CGRectMake(photoViewX, photoViewY, photoViewWH, photoViewWH);
+    if (status.pic_urls.count) {
+        CGFloat photosX = contentLabelX;
+        CGFloat photosY = CGRectGetMaxY(_contentLabelF) + SJStatusCellBorder;
+        CGSize photosSize = [SJStatusPhotosView sizeWithPhotosCount:(int)status.pic_urls.count];
+        _photosViewF = (CGRect){{photosX,photosY},photosSize};
     }
     
     //被转发微博
@@ -100,13 +101,13 @@
         _rewteetContentLabelF = (CGRect){{retweetContentLabelX,retweetContentLabelY},retweetContentLabelSize};
         
         //被转发微博的配图
-        if (status.retweeted_status.thumbnail_pic) {
-            CGFloat retweetPhotoViewWH = 70;
-            CGFloat retweetPhotoViewX = retweetContentLabelX;
-            CGFloat retweetPhotoViewY = CGRectGetMaxY(_rewteetContentLabelF) + SJStatusCellBorder;
-            _rewteetPhotoViewF = CGRectMake(retweetPhotoViewX, retweetPhotoViewY, retweetPhotoViewWH, retweetPhotoViewWH);
+        if (status.retweeted_status.pic_urls.count) {
+            CGFloat retweetPhotosX = retweetContentLabelX;
+            CGFloat retweetPhotosY = CGRectGetMaxY(_rewteetContentLabelF) + SJStatusCellBorder;
+            CGSize retweetedPhotosSize = [SJStatusPhotosView sizeWithPhotosCount:(int)status.retweeted_status.pic_urls.count];
+            _rewteetPhotosViewF = (CGRect){{retweetPhotosX,retweetPhotosY},retweetedPhotosSize};
             
-            retweetViewH = CGRectGetMaxY(_rewteetPhotoViewF);
+            retweetViewH = CGRectGetMaxY(_rewteetPhotosViewF);
         } else {
             retweetViewH = CGRectGetMaxY(_rewteetContentLabelF);
         }
@@ -116,8 +117,8 @@
         //有转发微博时topView
         topViewH = CGRectGetMaxY(_rewteetViewF);
     } else {
-        if (status.thumbnail_pic) {
-            topViewH = CGRectGetMaxY(_photoViewF);
+        if (status.pic_urls.count) {
+            topViewH = CGRectGetMaxY(_photosViewF);
         } else {
             topViewH = CGRectGetMaxY(_contentLabelF);
         }
