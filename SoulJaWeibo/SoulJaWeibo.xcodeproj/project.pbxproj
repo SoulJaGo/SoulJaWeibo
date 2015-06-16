@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960A29301B3046A70068AB64 /* SJComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A292F1B3046A70068AB64 /* SJComposeViewController.m */; };
+		960A29341B3077DF0068AB64 /* SJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A29331B3077DF0068AB64 /* SJTextView.m */; };
 		961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */; };
 		961239C31B1F37FF00041868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961239C11B1F37FF00041868 /* Main.storyboard */; };
 		961239C51B1F37FF00041868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961239C41B1F37FF00041868 /* Images.xcassets */; };
@@ -112,6 +114,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		960A292E1B3046A70068AB64 /* SJComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJComposeViewController.h; sourceTree = "<group>"; };
+		960A292F1B3046A70068AB64 /* SJComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJComposeViewController.m; sourceTree = "<group>"; };
+		960A29321B3077DF0068AB64 /* SJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTextView.h; sourceTree = "<group>"; };
+		960A29331B3077DF0068AB64 /* SJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTextView.m; sourceTree = "<group>"; };
 		961239B11B1F37FF00041868 /* SoulJaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulJaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		961239B51B1F37FF00041868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		961239BC1B1F37FF00041868 /* SoulJaWeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoulJaWeibo.xcdatamodel; sourceTree = "<group>"; };
@@ -316,6 +322,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		960A292C1B3045C00068AB64 /* Compose(发微博) */ = {
+			isa = PBXGroup;
+			children = (
+				960A29311B3077CC0068AB64 /* View */,
+				960A292D1B3045D20068AB64 /* Controller */,
+			);
+			name = "Compose(发微博)";
+			sourceTree = "<group>";
+		};
+		960A292D1B3045D20068AB64 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				960A292E1B3046A70068AB64 /* SJComposeViewController.h */,
+				960A292F1B3046A70068AB64 /* SJComposeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		960A29311B3077CC0068AB64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				960A29321B3077DF0068AB64 /* SJTextView.h */,
+				960A29331B3077DF0068AB64 /* SJTextView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		961239A81B1F37FE00041868 = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +626,7 @@
 		96BD210C1B2278BB007DF25A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				960A292C1B3045C00068AB64 /* Compose(发微博) */,
 				96BA873A1B272ADD002AD5C3 /* OAuth(授权) */,
 				96CBEBBE1B25833C00E5B68B /* NewFeature(新特性) */,
 				96BD210D1B2278BB007DF25A /* Discover(广场) */,
@@ -956,6 +990,7 @@
 				96AB24491B287CCD005C6FB6 /* MJProperty.m in Sources */,
 				96AB242C1B286B72005C6FB6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				96BD21321B2278BB007DF25A /* SJTabBarController.m in Sources */,
+				960A29341B3077DF0068AB64 /* SJTextView.m in Sources */,
 				96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */,
 				96AB23AF1B279EF3005C6FB6 /* AFSecurityPolicy.m in Sources */,
 				96AB23AC1B279EF3005C6FB6 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1007,6 +1042,7 @@
 				96AB244E1B287CCD005C6FB6 /* NSString+Extension.m in Sources */,
 				965686271B2FEE0B00FED17F /* MJRefreshLegendHeader.m in Sources */,
 				96AB23B01B279EF3005C6FB6 /* AFURLConnectionOperation.m in Sources */,
+				960A29301B3046A70068AB64 /* SJComposeViewController.m in Sources */,
 				96AB23B11B279EF3005C6FB6 /* AFURLRequestSerialization.m in Sources */,
 				965686231B2FEE0B00FED17F /* MJRefreshGifFooter.m in Sources */,
 				96AB244B1B287CCD005C6FB6 /* NSObject+MJCoding.m in Sources */,

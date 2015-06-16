@@ -116,4 +116,5 @@
     frame.size.height -= SJStatusTableBorder;
     [super setFrame:frame];
 }
+
 @end

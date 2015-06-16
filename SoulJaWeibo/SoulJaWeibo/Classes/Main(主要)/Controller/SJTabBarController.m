@@ -13,6 +13,7 @@
 #import "SJMeViewController.h"
 #import "SJTabBar.h"
 #import "SJNavigationController.h"
+#import "SJComposeViewController.h"
 
 @interface SJTabBarController () <SJTabBarDelegate>
 @property (nonatomic,weak) SJTabBar *customTabbar;
@@ -98,5 +99,13 @@
 - (void)tabbar:(SJTabBar *)tabbar didSelectedButtonFrom:(int)from to:(int)to
 {
     self.selectedIndex = to;
+}
+
+- (void)tabbardidClickPlusButton:(SJTabBar *)tabbar
+{
+    
+    SJComposeViewController *composeVc = [[SJComposeViewController alloc] init];
+    SJNavigationController  *nav = [[SJNavigationController alloc] initWithRootViewController:composeVc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 @end

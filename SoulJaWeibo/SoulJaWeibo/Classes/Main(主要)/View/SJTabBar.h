@@ -12,7 +12,7 @@
 
 @optional
 - (void)tabbar:(SJTabBar *)tabbar didSelectedButtonFrom:(int)from to:(int)to;
-
+- (void)tabbardidClickPlusButton:(SJTabBar *)tabbar;
 @end
 @interface SJTabBar : UIView
 @property (nonatomic,weak) id<SJTabBarDelegate> delegate;
