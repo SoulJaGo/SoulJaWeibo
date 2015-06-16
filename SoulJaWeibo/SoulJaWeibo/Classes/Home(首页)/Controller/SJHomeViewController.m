@@ -27,10 +27,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //0.继承刷新控件
+    [self setupRefresh];
     //1.设置导航栏
     [self setupNavBar];
     //2.加载微博数据
     [self setupStatusData];
+}
+
+- (void)setupRefresh
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void)refreshControlStateChange:(UIRefreshControl *)refreshControl
+{
+    
 }
 
 /**
@@ -44,7 +58,7 @@
     //2.请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [SJAccountTool account].access_token;
-    params[@"count"] = @5;
+    params[@"count"] = @3;
     
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //取出所有的微博数据

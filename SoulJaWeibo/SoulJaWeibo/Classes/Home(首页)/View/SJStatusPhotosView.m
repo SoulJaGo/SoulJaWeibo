@@ -8,6 +8,10 @@
 
 #import "SJStatusPhotosView.h"
 #import "SJStatusPhotoView.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
+#import "SJPhoto.h"
+
 #define SJStatusCellBorder 5
 #define SJStatusPhotosMaxCount 9
 #define SJStatusPhotosMaxCols(photosCount) ((photosCount==4)?2:3)
@@ -23,36 +27,33 @@
         for (int i = 0; i < SJStatusPhotosMaxCount; i++) {
             SJStatusPhotoView *photoView = [[SJStatusPhotoView alloc] init];
             photoView.userInteractionEnabled = YES;
-            UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPhoto:)];
-            [photoView addGestureRecognizer:gesture];
+            UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoTap:)];
+            [photoView addGestureRecognizer:recognizer];
             [self addSubview:photoView];
         }
     }
     return self;
 }
 
-- (void)tapPhoto:(UITapGestureRecognizer *)recongnizer
+- (void)photoTap:(UITapGestureRecognizer *)recongnizer
 {
-    //1.添加一个遮盖
-    UIView *cover = [[UIView alloc] init];
-    cover.frame = [UIScreen mainScreen].bounds;
-    cover.backgroundColor = [UIColor blackColor];
-    [[UIApplication sharedApplication].keyWindow addSubview:cover];
+    int count = (int)self.pic_urls.count;
+    //1.封装图片数据
+    NSMutableArray *myphotos = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        SJPhoto *photoUrl = self.pic_urls[i];
+        NSString *photoStr = [photoUrl.thumbnail_pic stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
+        photo.url = [NSURL URLWithString:photoStr];
+        photo.srcImageView = self.subviews[i];
+        [myphotos addObject:photo];
+    }
     
-    //2.添加一张图片遮盖上去
-    SJStatusPhotoView *photoView = (SJStatusPhotoView *)recongnizer.view;
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = photoView.image;
-    [self convertRect:photoView.frame toView:cover];
-    [cover addSubview:imageView];
-    
-    //3.放大
-    [UIView animateWithDuration:1.0 animations:^{
-        CGPoint imageViewCenter = cover.center;
-        imageView.center = imageViewCenter;
-        [imageView setFrame:CGRectMake(imageViewCenter.x - 105, imageViewCenter.y - 105, 210, 210)];
-    }];
-    
+    //2.显示相册
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = recongnizer.view.tag;
+    browser.photos = myphotos;
+    [browser show];
 }
 
 + (CGSize)sizeWithPhotosCount:(int)count
