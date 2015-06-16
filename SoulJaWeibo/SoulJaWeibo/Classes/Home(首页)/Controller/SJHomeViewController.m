@@ -18,12 +18,21 @@
 #import "SJStatusFrame.h"
 #import "SJStatusCell.h"
 #import "MBProgressHUD+MJ.h"
+#import "MJRefresh.h"
 
 @interface SJHomeViewController ()
-@property (nonatomic,strong) NSArray *statusFrames;
+@property (nonatomic,strong) NSMutableArray *statusFrames;
+@property (nonatomic,weak) SJTitleButton *titleButton;
 @end
 
 @implementation SJHomeViewController
+- (NSMutableArray *)statusFrames
+{
+    if (_statusFrames == nil) {
+        _statusFrames = [NSMutableArray array];
+    }
+    return _statusFrames;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,8 +40,23 @@
     [self setupRefresh];
     //1.设置导航栏
     [self setupNavBar];
-    //2.加载微博数据
-    [self setupStatusData];
+    //2.获取用户信息
+    [self setupUserData];
+}
+
+- (void)setupUserData
+{
+    //1.创建请求
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [SJAccountTool account].access_token;
+    params[@"uid"] = @([SJAccountTool account].uid);
+    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        SJUser *user = [SJUser objectWithKeyValues:responseObject];
+        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        SJLog(@"%@",error);
+    }];
 }
 
 - (void)setupRefresh
@@ -40,11 +64,152 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
+    
+    //自动进入刷新状态
+    [refreshControl beginRefreshing];
+    //直接加载数据
+    [self refreshControlStateChange:refreshControl];
+    //上啦刷新
+    [self.tableView addLegendFooterWithRefreshingBlock:^{
+        //1.发起请求
+        AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+        
+        //2.请求参数
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"access_token"] = [SJAccountTool account].access_token;
+        params[@"count"] = @1;
+        if (self.statusFrames.count) {
+            SJStatusFrame *statusFrame = [self.statusFrames lastObject];
+            long long maxId = [statusFrame.status.idstr longLongValue] - 1;
+            params[@"max_id"] = @(maxId);
+        }
+        [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            //取出所有的微博数据
+            NSArray *dictArray = responseObject[@"statuses"];
+            
+            //将字典数据转换为模型数据
+            //        NSMutableArray *statusArray = [NSMutableArray array];
+            //        for (NSDictionary *dict in dictArray) {
+            //            //创建模型
+            //            SJStatus *status = [SJStatus objectWithKeyValues:dict];
+            //
+            //            //添加模型
+            //            [statusArray addObject:status];
+            //        }
+            NSArray *statusArray = [SJStatus objectArrayWithKeyValuesArray:dictArray];
+            
+            NSMutableArray *statusFrameArray = [NSMutableArray array];
+            
+            for (SJStatus *status in statusArray) {
+                SJStatusFrame *statusFrame = [[SJStatusFrame alloc] init];
+                statusFrame.status = status;
+                [statusFrameArray addObject:statusFrame];
+            }
+            [self.statusFrames addObjectsFromArray:statusFrameArray];
+            //刷新表格
+            [self.tableView reloadData];
+            [self.tableView.footer endRefreshing];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+            //[MBProgressHUD showError:[NSString stringWithFormat:@"%@",error]];
+        }];
+
+    }];
 }
 
 - (void)refreshControlStateChange:(UIRefreshControl *)refreshControl
 {
+    //1.发起请求
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
+    //2.请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [SJAccountTool account].access_token;
+    params[@"count"] = @3;
+    if (self.statusFrames.count) {
+        SJStatusFrame *statusFrame = self.statusFrames[0];
+        params[@"since_id"] = statusFrame.status.idstr;
+    }
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //取出所有的微博数据
+        NSArray *dictArray = responseObject[@"statuses"];
+        
+        //将字典数据转换为模型数据
+        //        NSMutableArray *statusArray = [NSMutableArray array];
+        //        for (NSDictionary *dict in dictArray) {
+        //            //创建模型
+        //            SJStatus *status = [SJStatus objectWithKeyValues:dict];
+        //
+        //            //添加模型
+        //            [statusArray addObject:status];
+        //        }
+        NSArray *statusArray = [SJStatus objectArrayWithKeyValuesArray:dictArray];
+        
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        
+        for (SJStatus *status in statusArray) {
+            SJStatusFrame *statusFrame = [[SJStatusFrame alloc] init];
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
+        
+        //追加最新的数据在旧数据前面
+        NSMutableArray *tempArray = [NSMutableArray array];
+        [tempArray addObjectsFromArray:statusFrameArray];
+        [tempArray addObjectsFromArray:self.statusFrames];
+        self.statusFrames = tempArray;
+        
+        //刷新表格
+        [self.tableView reloadData];
+        
+        //刷新控件停止显示刷新状态
+        [refreshControl endRefreshing];
+        
+        //给用户友善的提示
+        [self showNewStatusCount:(int)statusFrameArray.count];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+        //[MBProgressHUD showError:[NSString stringWithFormat:@"%@",error]];
+    }];
+
+}
+
+- (void)showNewStatusCount:(int)count
+{
+    //1.创建按钮
+    UIButton *btn = [[UIButton alloc] init];
+    //btn下面
+    [self.navigationController.view insertSubview:btn belowSubview:self.navigationController.navigationBar];
+    //2.设置图片和文字
+    btn.userInteractionEnabled = NO;
+    [btn setBackgroundImage:[UIImage imageWithName:@"timeline_new_status_background"] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    if (count) {
+        NSString *title = [NSString stringWithFormat:@"共有%d条微博",count];
+        [btn setTitle:title forState:UIControlStateNormal];
+    } else {
+        [btn setTitle:@"没有新的微博数据" forState:UIControlStateNormal];
+    }
+    
+    //3.设置按钮的初始frame
+    CGFloat btnH = 30;
+    CGFloat btnY = 64 - btnH;
+    CGFloat btnW = 320;
+    CGFloat btnX = 0;
+    btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
+    
+    //4.通过动画移动按钮
+    [UIView animateWithDuration:1.0 animations:^{
+        btn.transform = CGAffineTransformMakeTranslation(0, btnH + 1);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            btn.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            //btn从父控件中移除
+            [btn removeFromSuperview];
+        }];
+    }];
 }
 
 /**
@@ -107,13 +272,14 @@
     //设置中间的按钮
     SJTitleButton *titleButton = [SJTitleButton titleButton];
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [titleButton setTitle:@"哈哈哈哈" forState:UIControlStateNormal];
-    titleButton.frame = CGRectMake(0, 0, 100, 30);
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    titleButton.frame = CGRectMake(0, 0, 150, 30);
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.titleButton = titleButton;
     self.navigationItem.titleView = titleButton;
     
     self.tableView.backgroundColor = SJColor(226, 226, 226);
-    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
+    //self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
 }
 
 - (void)titleClick:(SJTitleButton *)titleButton
