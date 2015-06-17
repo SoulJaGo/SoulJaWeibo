@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SJTextView : UITextView
-
+@property (nonatomic,copy) NSString *placeholder;
 @end

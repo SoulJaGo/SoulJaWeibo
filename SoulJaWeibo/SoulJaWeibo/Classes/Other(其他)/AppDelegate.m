@@ -13,6 +13,7 @@
 #import "SJAccount.h"
 #import "SJWeiboTool.h"
 #import "SJAccountTool.h"
+#import "SDWebImageManager+MJ.h"
 
 @interface AppDelegate ()
 
@@ -64,6 +65,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //停止下载所有的图片
+    [[SDWebImageManager sharedManager] cancelAll];
+    //清除内存中的图片
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
 
 #pragma mark - Core Data stack

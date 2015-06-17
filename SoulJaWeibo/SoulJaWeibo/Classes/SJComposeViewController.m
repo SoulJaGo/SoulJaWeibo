@@ -8,6 +8,11 @@
 
 #import "SJComposeViewController.h"
 #import "SJTextView.h"
+#import "AFNetworking.h"
+#import "SJAccount.h"
+#import "SJAccountTool.h"
+#import "MBProgressHUD+MJ.h"
+
 @interface SJComposeViewController ()
 @property (nonatomic,strong) SJTextView *textView;
 @end
@@ -35,6 +40,8 @@
 {
     SJTextView *textView = [[SJTextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     textView.font = [UIFont systemFontOfSize:15];
+    [textView becomeFirstResponder];
+    textView.placeholder = @"分享新鲜事...";
     [self.view addSubview:textView];
     self.textView = textView;
     
@@ -68,7 +75,17 @@
 
 - (void)send
 {
-    
+    //1.AFN管理员
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [SJAccountTool account].access_token;
+    params[@"status"] = self.textView.text;
+    [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [MBProgressHUD showSuccess:@"发送成功"];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD showError:@"发送失败"];
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
