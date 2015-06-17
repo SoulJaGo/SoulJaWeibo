@@ -7,7 +7,7 @@
 //
 
 #import "SJTextView.h"
-@interface SJTextView ()
+@interface SJTextView () 
 @property (nonatomic,strong) UILabel *placeholderLabel;
 @end
 @implementation SJTextView
@@ -51,4 +51,5 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 @end

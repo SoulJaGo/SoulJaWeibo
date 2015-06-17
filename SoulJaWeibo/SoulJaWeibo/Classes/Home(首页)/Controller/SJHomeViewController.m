@@ -125,7 +125,7 @@
     //2.请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [SJAccountTool account].access_token;
-    params[@"count"] = @3;
+    params[@"count"] = @2;
     if (self.statusFrames.count) {
         SJStatusFrame *statusFrame = self.statusFrames[0];
         params[@"since_id"] = statusFrame.status.idstr;

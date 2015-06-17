@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9606F03C1B314A040073F46A /* SJComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9606F03B1B314A040073F46A /* SJComposeToolbar.m */; };
 		960A29301B3046A70068AB64 /* SJComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A292F1B3046A70068AB64 /* SJComposeViewController.m */; };
 		960A29341B3077DF0068AB64 /* SJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A29331B3077DF0068AB64 /* SJTextView.m */; };
 		961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961239BB1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld */; };
@@ -114,6 +115,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9606F03A1B314A040073F46A /* SJComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJComposeToolbar.h; sourceTree = "<group>"; };
+		9606F03B1B314A040073F46A /* SJComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJComposeToolbar.m; sourceTree = "<group>"; };
 		960A292E1B3046A70068AB64 /* SJComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJComposeViewController.h; sourceTree = "<group>"; };
 		960A292F1B3046A70068AB64 /* SJComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJComposeViewController.m; sourceTree = "<group>"; };
 		960A29321B3077DF0068AB64 /* SJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTextView.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 			children = (
 				960A29321B3077DF0068AB64 /* SJTextView.h */,
 				960A29331B3077DF0068AB64 /* SJTextView.m */,
+				9606F03A1B314A040073F46A /* SJComposeToolbar.h */,
+				9606F03B1B314A040073F46A /* SJComposeToolbar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1014,6 +1019,7 @@
 				9692EADD1B29C48E00767D7A /* NSDate+MJ.m in Sources */,
 				96AB23C01B27A59F005C6FB6 /* SJAccount.m in Sources */,
 				96BD21331B2278BB007DF25A /* SJMeViewController.m in Sources */,
+				9606F03C1B314A040073F46A /* SJComposeToolbar.m in Sources */,
 				96AB24221B286B72005C6FB6 /* SDWebImageCompat.m in Sources */,
 				96AB24241B286B72005C6FB6 /* SDWebImageDownloader.m in Sources */,
 				96AB24251B286B72005C6FB6 /* SDWebImageDownloaderOperation.m in Sources */,
