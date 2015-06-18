@@ -153,7 +153,7 @@
     } else { //没有图片
         [self sendWithoutImage];
     }
-    [self dismissViewControllerAnimated:YES completion:nil]
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)sendWithImage

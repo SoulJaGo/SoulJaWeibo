@@ -107,7 +107,9 @@
             }
             [self.statusFrames addObjectsFromArray:statusFrameArray];
             //刷新表格
+            self.tabBarItem.badgeValue = 0;
             [self.tableView reloadData];
+            
             [self.tableView.footer endRefreshing];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@",error);
@@ -125,7 +127,7 @@
     //2.请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [SJAccountTool account].access_token;
-    params[@"count"] = @2;
+    params[@"count"] = @5;
     if (self.statusFrames.count) {
         SJStatusFrame *statusFrame = self.statusFrames[0];
         params[@"since_id"] = statusFrame.status.idstr;

@@ -14,9 +14,13 @@
 #import "SJTabBar.h"
 #import "SJNavigationController.h"
 #import "SJComposeViewController.h"
+#import "AFNetworking.h"
+#import "SJAccount.h"
+#import "SJAccountTool.h"
 
 @interface SJTabBarController () <SJTabBarDelegate>
 @property (nonatomic,weak) SJTabBar *customTabbar;
+@property (nonatomic,strong) SJHomeViewController *home;
 @end
 
 @implementation SJTabBarController
@@ -31,6 +35,36 @@
     
     //设置tabbar的代理
     self.customTabbar.delegate = self;
+    
+    //利用定时器计算用户的未读数
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(getUnreadCount) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)getUnreadCount
+{
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [SJAccountTool account].access_token;
+    params[@"uid"] = @([SJAccountTool account].uid);
+    [mgr GET:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        int count = [responseObject[@"status"] intValue];
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        if (count > 99) {
+            self.home.tabBarItem.badgeValue = @"N";
+            [UIApplication sharedApplication].applicationIconBadgeNumber = @99;
+        } else if(count == 0) {
+            self.home.tabBarItem.badgeValue = nil;
+        } else {
+            self.home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",count];
+            [UIApplication sharedApplication].applicationIconBadgeNumber = count;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,17 +95,15 @@
 {
     //1.首页
     SJHomeViewController *home = [[SJHomeViewController alloc] init];
-    home.tabBarItem.badgeValue = @"19";
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
+    self.home = home;
     
     //2.消息
     SJMessageViewController *message = [[SJMessageViewController alloc] init];
-    message.tabBarItem.badgeValue = @"10";
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
     
     //3.广场
     SJDiscoverViewController *discover = [[SJDiscoverViewController alloc] init];
-    discover.tabBarItem.badgeValue = @"new";
     [self setupChildViewController:discover title:@"广场" imageName:@"tabbar_discover" selectedImageName:@"tabbar_discover_selected"];
     
     //4.我
