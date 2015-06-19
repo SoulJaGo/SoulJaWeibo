@@ -93,6 +93,15 @@
 		96BD21341B2278BB007DF25A /* SJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD21281B2278BB007DF25A /* SJMessageViewController.m */; };
 		96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD212D1B2278BB007DF25A /* AppDelegate.m */; };
 		96BD21361B2278BB007DF25A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BD212E1B2278BB007DF25A /* main.m */; };
+		96C3721C1B33A99100178BFB /* SJSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C3721B1B33A99100178BFB /* SJSettingItem.m */; };
+		96C3721F1B33AC0600178BFB /* SJSettingLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C3721E1B33AC0600178BFB /* SJSettingLabelItem.m */; };
+		96C372221B33AC6C00178BFB /* SJSettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C372211B33AC6C00178BFB /* SJSettingSwitchItem.m */; };
+		96C372251B33AC8F00178BFB /* SJSettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C372241B33AC8F00178BFB /* SJSettingArrowItem.m */; };
+		96C372281B33B61F00178BFB /* SJSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C372271B33B61F00178BFB /* SJSettingGroup.m */; };
+		96C3722B1B33B9BD00178BFB /* SJSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C3722A1B33B9BD00178BFB /* SJSettingViewController.m */; };
+		96C3722E1B33C3DD00178BFB /* SJSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C3722D1B33C3DD00178BFB /* SJSettingCell.m */; };
+		96C372311B33D66200178BFB /* SJSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C372301B33D66200178BFB /* SJSystemViewController.m */; };
+		96C372341B33D96F00178BFB /* SJGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C372331B33D96F00178BFB /* SJGeneralViewController.m */; };
 		96CBEBB41B2532E200E5B68B /* SJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB31B2532E200E5B68B /* SJNavigationController.m */; };
 		96CBEBB71B25678400E5B68B /* UIBarButtonItem+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB61B25678400E5B68B /* UIBarButtonItem+SJ.m */; };
 		96CBEBBA1B256CE200E5B68B /* SJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBEBB91B256CE200E5B68B /* SJSearchBar.m */; };
@@ -287,6 +296,24 @@
 		96BD212C1B2278BB007DF25A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96BD212D1B2278BB007DF25A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		96BD212E1B2278BB007DF25A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96C3721A1B33A99100178BFB /* SJSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJSettingItem.h; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingItem.h"; sourceTree = SOURCE_ROOT; };
+		96C3721B1B33A99100178BFB /* SJSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJSettingItem.m; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingItem.m"; sourceTree = SOURCE_ROOT; };
+		96C3721D1B33AC0600178BFB /* SJSettingLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJSettingLabelItem.h; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingLabelItem.h"; sourceTree = SOURCE_ROOT; };
+		96C3721E1B33AC0600178BFB /* SJSettingLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJSettingLabelItem.m; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingLabelItem.m"; sourceTree = SOURCE_ROOT; };
+		96C372201B33AC6C00178BFB /* SJSettingSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJSettingSwitchItem.h; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingSwitchItem.h"; sourceTree = SOURCE_ROOT; };
+		96C372211B33AC6C00178BFB /* SJSettingSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJSettingSwitchItem.m; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingSwitchItem.m"; sourceTree = SOURCE_ROOT; };
+		96C372231B33AC8F00178BFB /* SJSettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJSettingArrowItem.h; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingArrowItem.h"; sourceTree = SOURCE_ROOT; };
+		96C372241B33AC8F00178BFB /* SJSettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJSettingArrowItem.m; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingArrowItem.m"; sourceTree = SOURCE_ROOT; };
+		96C372261B33B61F00178BFB /* SJSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJSettingGroup.h; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingGroup.h"; sourceTree = SOURCE_ROOT; };
+		96C372271B33B61F00178BFB /* SJSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJSettingGroup.m; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingGroup.m"; sourceTree = SOURCE_ROOT; };
+		96C372291B33B9BD00178BFB /* SJSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSettingViewController.h; sourceTree = "<group>"; };
+		96C3722A1B33B9BD00178BFB /* SJSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSettingViewController.m; sourceTree = "<group>"; };
+		96C3722C1B33C3DD00178BFB /* SJSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJSettingCell.h; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingCell.h"; sourceTree = SOURCE_ROOT; };
+		96C3722D1B33C3DD00178BFB /* SJSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJSettingCell.m; path = "SoulJaWeibo/Classes/Me(我)/Controller/SJSettingCell.m"; sourceTree = SOURCE_ROOT; };
+		96C3722F1B33D66200178BFB /* SJSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSystemViewController.h; sourceTree = "<group>"; };
+		96C372301B33D66200178BFB /* SJSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSystemViewController.m; sourceTree = "<group>"; };
+		96C372321B33D96F00178BFB /* SJGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJGeneralViewController.h; sourceTree = "<group>"; };
+		96C372331B33D96F00178BFB /* SJGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJGeneralViewController.m; sourceTree = "<group>"; };
 		96CBEBB21B2532E200E5B68B /* SJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavigationController.h; sourceTree = "<group>"; };
 		96CBEBB31B2532E200E5B68B /* SJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavigationController.m; sourceTree = "<group>"; };
 		96CBEBB51B25678400E5B68B /* UIBarButtonItem+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SJ.h"; sourceTree = "<group>"; };
@@ -788,8 +815,14 @@
 		96BD21201B2278BB007DF25A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				96C372321B33D96F00178BFB /* SJGeneralViewController.h */,
+				96C372331B33D96F00178BFB /* SJGeneralViewController.m */,
 				96BD21211B2278BB007DF25A /* SJMeViewController.h */,
 				96BD21221B2278BB007DF25A /* SJMeViewController.m */,
+				96C372291B33B9BD00178BFB /* SJSettingViewController.h */,
+				96C3722A1B33B9BD00178BFB /* SJSettingViewController.m */,
+				96C3722F1B33D66200178BFB /* SJSystemViewController.h */,
+				96C372301B33D66200178BFB /* SJSystemViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -797,6 +830,16 @@
 		96BD21231B2278BB007DF25A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96C3721A1B33A99100178BFB /* SJSettingItem.h */,
+				96C3721B1B33A99100178BFB /* SJSettingItem.m */,
+				96C3721D1B33AC0600178BFB /* SJSettingLabelItem.h */,
+				96C3721E1B33AC0600178BFB /* SJSettingLabelItem.m */,
+				96C372201B33AC6C00178BFB /* SJSettingSwitchItem.h */,
+				96C372211B33AC6C00178BFB /* SJSettingSwitchItem.m */,
+				96C372231B33AC8F00178BFB /* SJSettingArrowItem.h */,
+				96C372241B33AC8F00178BFB /* SJSettingArrowItem.m */,
+				96C372261B33B61F00178BFB /* SJSettingGroup.h */,
+				96C372271B33B61F00178BFB /* SJSettingGroup.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -804,6 +847,8 @@
 		96BD21241B2278BB007DF25A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96C3722C1B33C3DD00178BFB /* SJSettingCell.h */,
+				96C3722D1B33C3DD00178BFB /* SJSettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1008,9 +1053,11 @@
 				96AB23AB1B279EF3005C6FB6 /* AFHTTPRequestOperation.m in Sources */,
 				96AB24281B286B72005C6FB6 /* UIButton+WebCache.m in Sources */,
 				96AB244D1B287CCD005C6FB6 /* NSObject+MJProperty.m in Sources */,
+				96C372251B33AC8F00178BFB /* SJSettingArrowItem.m in Sources */,
 				965CFE271B227F7D003D83F2 /* UIImage+SJ.m in Sources */,
 				96BD21301B2278BB007DF25A /* SJDiscoverViewController.m in Sources */,
 				965686021B2FA93E00FED17F /* MJPhotoView.m in Sources */,
+				96C372311B33D66200178BFB /* SJSystemViewController.m in Sources */,
 				96AB23BC1B279F7B005C6FB6 /* MBProgressHUD.m in Sources */,
 				965686261B2FEE0B00FED17F /* MJRefreshLegendFooter.m in Sources */,
 				96AB24291B286B72005C6FB6 /* UIImage+GIF.m in Sources */,
@@ -1031,11 +1078,13 @@
 				96CBEBBD1B25730E00E5B68B /* SJTitleButton.m in Sources */,
 				96CD0C441B290E69008E03AA /* SJStatusCell.m in Sources */,
 				965686221B2FEE0B00FED17F /* MJRefreshFooter.m in Sources */,
+				96C372221B33AC6C00178BFB /* SJSettingSwitchItem.m in Sources */,
 				965686241B2FEE0B00FED17F /* MJRefreshGifHeader.m in Sources */,
 				96CD0C471B292C8F008E03AA /* SJStatusFrame.m in Sources */,
 				96AB23C71B27BBF5005C6FB6 /* SJAccountTool.m in Sources */,
 				96BD21351B2278BB007DF25A /* AppDelegate.m in Sources */,
 				96BD21341B2278BB007DF25A /* SJMessageViewController.m in Sources */,
+				96C3722B1B33B9BD00178BFB /* SJSettingViewController.m in Sources */,
 				96BA873E1B272B0D002AD5C3 /* SJOAuthViewController.m in Sources */,
 				965686281B2FEE0B00FED17F /* UIScrollView+MJExtension.m in Sources */,
 				96AB242E1B286B72005C6FB6 /* UIView+WebCacheOperation.m in Sources */,
@@ -1046,6 +1095,7 @@
 				96CBEBB71B25678400E5B68B /* UIBarButtonItem+SJ.m in Sources */,
 				9692EAE01B29D00200767D7A /* SJStatusToolbar.m in Sources */,
 				96AB244E1B287CCD005C6FB6 /* NSString+Extension.m in Sources */,
+				96C372341B33D96F00178BFB /* SJGeneralViewController.m in Sources */,
 				965686271B2FEE0B00FED17F /* MJRefreshLegendHeader.m in Sources */,
 				96AB23B01B279EF3005C6FB6 /* AFURLConnectionOperation.m in Sources */,
 				960A29301B3046A70068AB64 /* SJComposeViewController.m in Sources */,
@@ -1058,6 +1108,7 @@
 				965685FE1B2FA93E00FED17F /* MJPhotoBrowser.m in Sources */,
 				965686001B2FA93E00FED17F /* MJPhotoProgressView.m in Sources */,
 				96AB23B21B279EF3005C6FB6 /* AFURLResponseSerialization.m in Sources */,
+				96C372281B33B61F00178BFB /* SJSettingGroup.m in Sources */,
 				965685FC1B2FA93E00FED17F /* MJPhoto.m in Sources */,
 				96AB24201B286B72005C6FB6 /* NSData+ImageContentType.m in Sources */,
 				96AB24311B28747A005C6FB6 /* SJStatus.m in Sources */,
@@ -1067,8 +1118,10 @@
 				965CFE2A1B228DEA003D83F2 /* SJTabBar.m in Sources */,
 				965686201B2FEE0B00FED17F /* MJRefreshComponent.m in Sources */,
 				96BD21311B2278BB007DF25A /* SJHomeViewController.m in Sources */,
+				96C3722E1B33C3DD00178BFB /* SJSettingCell.m in Sources */,
 				9627D9431B2F001F00C743BC /* SJPhoto.m in Sources */,
 				965686011B2FA93E00FED17F /* MJPhotoToolbar.m in Sources */,
+				96C3721C1B33A99100178BFB /* SJSettingItem.m in Sources */,
 				96BD21361B2278BB007DF25A /* main.m in Sources */,
 				9627D93F1B2F000800C743BC /* SJStatusPhotosView.m in Sources */,
 				961239BD1B1F37FF00041868 /* SoulJaWeibo.xcdatamodeld in Sources */,
@@ -1080,6 +1133,7 @@
 				965685FF1B2FA93E00FED17F /* MJPhotoLoadingView.m in Sources */,
 				9627D9401B2F000800C743BC /* SJStatusPhotoView.m in Sources */,
 				96AB24211B286B72005C6FB6 /* SDImageCache.m in Sources */,
+				96C3721F1B33AC0600178BFB /* SJSettingLabelItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

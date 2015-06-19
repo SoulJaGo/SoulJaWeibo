@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SJSettingViewController.h"
 
-@interface SJMeViewController : UITableViewController
+@interface SJMeViewController : SJSettingViewController
 
 @end

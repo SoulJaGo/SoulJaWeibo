@@ -7,6 +7,7 @@
 //
 
 #import "SJNavigationController.h"
+#import "UIBarButtonItem+SJ.h"
 
 @implementation SJNavigationController
 + (void)initialize
@@ -50,6 +51,21 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = NO;
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_back" highIcon:@"navigationbar_back_highlighted" target:self action:@selector(back)];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_more" highIcon:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    }
     [super pushViewController:viewController animated:animated];
 }
+- (void)more
+{
+    [self popToRootViewControllerAnimated:YES];
+}
+
+- (void)back
+{
+    [self popViewControllerAnimated:YES];
+}
+
 @end
